@@ -4,7 +4,6 @@ import {
   createStackNavigator,
   createBottomTabNavigator
 } from 'react-navigation';
-import { Ionicons, FontAwesome } from '@expo/vector-icons';
 
 import TabBarIcon from '../components/TabBarIcon';
 import CourseScreen from '../screens/CourseScreen';

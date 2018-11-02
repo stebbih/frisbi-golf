@@ -1,14 +1,17 @@
 import React from 'react';
-import { ExpoConfigView } from '@expo/samples';
+import { Text, View } from 'react-native';
+import styles from '../components/Styles.js';
 
-export default class OtherScreen extends React.Component {
+export default class GameScreen extends React.Component {
   static navigationOptions = {
-    title: 'app.json'
+    header: null
   };
 
   render() {
-    /* Go ahead and delete ExpoConfigView and replace it with your
-     * content, we just wanted to give you a quick view of your config */
-    return <ExpoConfigView />;
+    return (
+      <View style={styles.container}>
+        <Text> Other screen kemur hér! </Text>
+      </View>
+    );
   }
 }
