@@ -2,9 +2,8 @@ import React from 'react';
 import { Platform } from 'react-native';
 import {
   createStackNavigator,
-  createBottomTabNavigator
+  createBottomTabNavigator,
 } from 'react-navigation';
-import { Ionicons, FontAwesome } from '@expo/vector-icons';
 
 import TabBarIcon from '../components/TabBarIcon';
 import CourseScreen from '../screens/CourseScreen';
@@ -18,7 +17,7 @@ const CoursesStack = createStackNavigator({
   Courses: CourseScreen,
   NewGame: NewGameScreen,
   Game: GameScreen,
-  GameResults: ResultsScreen
+  GameResults: ResultsScreen,
 });
 
 CoursesStack.navigationOptions = {
@@ -32,11 +31,11 @@ CoursesStack.navigationOptions = {
           : 'md-search'
       }
     />
-  )
+  ),
 };
 
 const PlayedGamesStack = createStackNavigator({
-  PlayedGames: PlayedGamesScreen
+  PlayedGames: PlayedGamesScreen,
 });
 
 PlayedGamesStack.navigationOptions = {
@@ -50,11 +49,11 @@ PlayedGamesStack.navigationOptions = {
           : 'md-clipboard'
       }
     />
-  )
+  ),
 };
 
 const OtherStack = createStackNavigator({
-  Other: OtherScreen
+  Other: OtherScreen,
 });
 
 OtherStack.navigationOptions = {
@@ -68,11 +67,11 @@ OtherStack.navigationOptions = {
           : 'md-information-circle'
       }
     />
-  )
+  ),
 };
 
 export default createBottomTabNavigator({
   CoursesStack,
   PlayedGamesStack,
-  OtherStack
+  OtherStack,
 });
