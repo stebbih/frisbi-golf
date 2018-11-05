@@ -10,7 +10,7 @@ export default class GameScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text> Listi af völlum kemur hér! </Text>
+        <Text> CourseScreen: Listi af völlum kemur hér! </Text>
       </View>
     );
   }
