@@ -13,7 +13,6 @@ import {
 } from 'expo';
 
 import AppNavigator from './navigation/AppNavigator';
-import NewGameScreen from './screens/NewGameScreen';
 
 const styles = StyleSheet.create({
   container: {
@@ -66,7 +65,7 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
         {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-        <NewGameScreen />
+        <AppNavigator />
       </View>
     );
   }
