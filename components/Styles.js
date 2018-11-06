@@ -14,13 +14,15 @@ export default StyleSheet.create({
     borderWidth: 1,
     flexDirection: 'row',
     fontSize: 15,
+    // backgroundColor: 'blue',
   },
   /* *** New Game custom styles *** */
   newGameContainer: {
-    flex: 1,
-    backgroundColor: '#fff',
+    //flex: 1,
+    backgroundColor: 'red',
     // alignItems: 'center',
     justifyContent: 'center',
     padding: 20,
+    margin: 20,
   },
 });
