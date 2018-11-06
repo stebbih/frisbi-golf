@@ -10,6 +10,39 @@ import { Constants } from 'expo';
 import Collapsible from 'react-native-collapsible';
 import { FontAwesome } from '@expo/vector-icons';
 
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#c2ef99',
+    paddingTop: Constants.statusBarHeight,
+  },
+  title: {
+    textAlign: 'center',
+    fontSize: 22,
+    fontWeight: '300',
+    marginBottom: 20,
+  },
+  header: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  headerText: {
+    textAlign: 'left',
+    fontSize: 20,
+    fontWeight: '500',
+  },
+  angleButton: {
+    fontSize: 40,
+    textAlign: 'right'
+  },
+  content: {
+    padding: 20,
+    backgroundColor: '#fff',
+  },
+});
+
 export default class Rule extends Component {
   constructor(props) {
     super(props);
@@ -67,35 +100,3 @@ export default class Rule extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#c2ef99',
-    paddingTop: Constants.statusBarHeight,
-  },
-  title: {
-    textAlign: 'center',
-    fontSize: 22,
-    fontWeight: '300',
-    marginBottom: 20,
-  },
-  header: {
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  headerText: {
-    textAlign: 'left',
-    fontSize: 20,
-    fontWeight: '500',
-  },
-  angleButton: {
-    fontSize: 40,
-    textAlign: 'right'
-  },
-  content: {
-    padding: 20,
-    backgroundColor: '#fff',
-  },
-});

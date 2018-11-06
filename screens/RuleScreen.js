@@ -1,11 +1,7 @@
 import React, {Component} from 'react';
 import {
     StyleSheet,
-    Text,
     View,
-    Image,
-    ScrollView,
-    Animated,
     FlatList
 } from 'react-native';
 import Rule from '../components/Rule';
