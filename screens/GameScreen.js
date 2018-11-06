@@ -2,7 +2,6 @@ import React from 'react';
 import {
   Text, View, ScrollView, Dimensions,
 } from 'react-native';
-import styles from '../components/Styles';
 
 export default class GameScreen extends React.Component {
   static navigationOptions = {
@@ -31,8 +30,9 @@ export default class GameScreen extends React.Component {
     ];
 
     players = players.map((obj) => {
-      obj.score = undefined;
-      return obj;
+      const ret = obj;
+      ret.score = undefined;
+      return ret;
     });
 
     const game = [];
@@ -46,25 +46,22 @@ export default class GameScreen extends React.Component {
   }
 
   render() {
-    console.log(this.state.game);
-
     return (
       <ScrollView horizontal pagingEnabled>
-        {this.state.game.map((obj, key) => (
+        {this.state.game.map(obj => (
           <View
-            key={key}
+            key={obj.holeNumber}
             style={{
               flex: 1,
               borderWidth: 1,
               borderColor: '#999',
-              backgroundColor: '#f9f9f9',
+              backgroundColor: '#fbfbfb',
               width: Dimensions.get('window').width - 8,
               justifyContent: 'center',
               alignItems: 'center',
             }}
           >
             <Text>
-              {' '}
               {obj.holeNumber}
             </Text>
           </View>

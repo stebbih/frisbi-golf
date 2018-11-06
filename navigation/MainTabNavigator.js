@@ -1,9 +1,6 @@
 import React from 'react';
 import { Platform } from 'react-native';
-import {
-  createStackNavigator,
-  createBottomTabNavigator
-} from 'react-navigation';
+import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 
 import TabBarIcon from '../components/TabBarIcon';
 import CourseScreen from '../screens/CourseScreen';
@@ -17,7 +14,7 @@ const CoursesStack = createStackNavigator({
   Courses: CourseScreen,
   NewGame: NewGameScreen,
   Game: GameScreen,
-  GameResults: ResultsScreen
+  GameResults: ResultsScreen,
 });
 
 CoursesStack.navigationOptions = {
@@ -25,17 +22,13 @@ CoursesStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={
-        Platform.OS === 'ios'
-          ? `ios-search${focused ? '' : '-outline'}`
-          : 'md-search'
-      }
+      name={Platform.OS === 'ios' ? `ios-search${focused ? '' : '-outline'}` : 'md-search'}
     />
-  )
+  ),
 };
 
 const PlayedGamesStack = createStackNavigator({
-  PlayedGames: PlayedGamesScreen
+  PlayedGames: PlayedGamesScreen,
 });
 
 PlayedGamesStack.navigationOptions = {
@@ -43,17 +36,13 @@ PlayedGamesStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={
-        Platform.OS === 'ios'
-          ? `ios-clipboard${focused ? '' : '-outline'}`
-          : 'md-clipboard'
-      }
+      name={Platform.OS === 'ios' ? `ios-clipboard${focused ? '' : '-outline'}` : 'md-clipboard'}
     />
-  )
+  ),
 };
 
 const OtherStack = createStackNavigator({
-  Other: OtherScreen
+  Other: OtherScreen,
 });
 
 OtherStack.navigationOptions = {
@@ -67,11 +56,11 @@ OtherStack.navigationOptions = {
           : 'md-information-circle'
       }
     />
-  )
+  ),
 };
 
 export default createBottomTabNavigator({
   CoursesStack,
   PlayedGamesStack,
-  OtherStack
+  OtherStack,
 });
