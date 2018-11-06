@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View, TextInput, Button } from 'react-native';
 
-import FontAwesome, { Icons } from 'react-native-fontawesome';
+import { Feather } from '@expo/vector-icons';
 import styles from '../components/Styles';
 
 // Gera array af userum og senda a GameScreen
@@ -9,11 +9,13 @@ import styles from '../components/Styles';
 export default class NewGameScreen extends React.Component {
   render() {
     return (
-      <View style={styles.newGameContainer}>
-        <Text>New Game Screen</Text>
-        <TextInput style={styles.textInputStyle} />
-        {/* <FontAwesome>{Icons.plus-square-o}</FontAwesome> */}
-        <Button title="Spila!" />
+      <View style={styles.container}>
+        <View style={styles.newGameContainer}>
+          <Text>Skráðu leikmenn</Text>
+          <TextInput style={styles.textInputStyle} />
+          <Feather name="user-plus" size={32} color="green" />
+          <Button title="Spila!" />
+        </View>
       </View>
     );
   }
