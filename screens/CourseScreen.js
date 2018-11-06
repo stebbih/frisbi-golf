@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View, FlatList } from 'react-native';
 import { connect } from 'react-redux';
-// import styles from '../components/Styles';
 import { getAllCourses } from '../redux/actions/courseAction';
 
 class GameScreen extends Component {
@@ -20,18 +19,16 @@ class GameScreen extends Component {
         <FlatList
           data={courses}
           keyExtractor={item => item._id}
-          renderItem={({ item }) => (
-            <Text>{item.name}</Text>
-          )}
+          renderItem={({ item }) => <Text>{item.name}</Text>}
         />
       </View>
     );
   }
 }
 
-const mapStateToProps = ({ courses }) => {
-  return { courses };
-};
+const mapStateToProps = ({ courses }) => ({ courses });
 
-
-export default connect(mapStateToProps, { getAllCourses })(GameScreen);
+export default connect(
+  mapStateToProps,
+  { getAllCourses },
+)(GameScreen);

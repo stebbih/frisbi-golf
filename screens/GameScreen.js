@@ -1,17 +1,72 @@
 import React from 'react';
-import { Text, View } from 'react-native';
-import styles from '../components/Styles.js';
+import {
+  Text, View, ScrollView, Dimensions,
+} from 'react-native';
 
 export default class GameScreen extends React.Component {
   static navigationOptions = {
-    header: null
+    header: null,
   };
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      courseLength: 8,
+      game: [],
+    };
+  }
+
+  componentDidMount() {
+    const length = this.state.courseLength;
+    let players = [
+      {
+        id: 1,
+        name: 'Anna',
+      },
+      {
+        id: 2,
+        name: 'Birna',
+      },
+    ];
+
+    players = players.map((obj) => {
+      const ret = obj;
+      ret.score = undefined;
+      return ret;
+    });
+
+    const game = [];
+    for (let i = 1; i <= length; i += 1) {
+      game.push({
+        holeNumber: i,
+        scores: players,
+      });
+    }
+    this.setState({ game });
+  }
 
   render() {
     return (
-      <View style={styles.container}>
-        <Text> GAME SCREEN kemur hér! </Text>
-      </View>
+      <ScrollView horizontal pagingEnabled>
+        {this.state.game.map(obj => (
+          <View
+            key={obj.holeNumber}
+            style={{
+              flex: 1,
+              borderWidth: 1,
+              borderColor: '#999',
+              backgroundColor: '#fbfbfb',
+              width: Dimensions.get('window').width - 8,
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <Text>
+              {obj.holeNumber}
+            </Text>
+          </View>
+        ))}
+      </ScrollView>
     );
   }
 }
