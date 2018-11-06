@@ -1,7 +1,8 @@
 import React from 'react';
 import {
-  Text, View, ScrollView, Dimensions,
+  Text, View, ScrollView, TextInput,
 } from 'react-native';
+import styles from '../components/Styles';
 
 export default class GameScreen extends React.Component {
   static navigationOptions = {
@@ -27,6 +28,14 @@ export default class GameScreen extends React.Component {
         id: 2,
         name: 'Birna',
       },
+      {
+        id: 3,
+        name: 'Stebbi',
+      },
+      {
+        id: 4,
+        name: 'Sandra',
+      },
     ];
 
     players = players.map((obj) => {
@@ -38,34 +47,43 @@ export default class GameScreen extends React.Component {
     const game = [];
     for (let i = 1; i <= length; i += 1) {
       game.push({
-        holeNumber: i,
-        scores: players,
+        basketNum: i,
+        players,
       });
     }
     this.setState({ game });
   }
 
+  /*  changeScore = (basketNum, playerID, score) => {
+    alert(`change score: \n basketNum: ${basketNum}\n playerID: ${playerID}\n score: ${score}`);
+  };
+*/
+
+  renderPlayer = (basketNum, player) => (
+    <View key={player.id} style={styles.gameScreenPlayerContainer}>
+      <Text style={styles.gameScreenPlayerText}>{player.name}</Text>
+      <TextInput style={styles.scoreInputStyle} keyboardType="number-pad" maxLength={2} />
+    </View>
+  );
+
+  renderBasket = obj => (
+    <View key={obj.basketNum} style={styles.gameScreenBasketContainer}>
+      <View style={styles.gameScreenHeaderContainer}>
+        <Text style={styles.gameScreenHeaderText}>
+          {'KARFA '}
+          {obj.basketNum}
+        </Text>
+      </View>
+      <ScrollView style={styles.gameScreenBasketScrollView}>
+        {obj.players.map(player => this.renderPlayer(obj.basketNum, player))}
+      </ScrollView>
+    </View>
+  );
+
   render() {
     return (
       <ScrollView horizontal pagingEnabled>
-        {this.state.game.map(obj => (
-          <View
-            key={obj.holeNumber}
-            style={{
-              flex: 1,
-              borderWidth: 1,
-              borderColor: '#999',
-              backgroundColor: '#fbfbfb',
-              width: Dimensions.get('window').width - 8,
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}
-          >
-            <Text>
-              {obj.holeNumber}
-            </Text>
-          </View>
-        ))}
+        {this.state.game.map(obj => this.renderBasket(obj))}
       </ScrollView>
     );
   }
