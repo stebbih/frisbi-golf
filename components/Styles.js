@@ -31,11 +31,16 @@ export default StyleSheet.create({
   },
   /* *** New Game custom styles *** */
   newGameContainer: {
-    //flex: 1,
-    backgroundColor: 'red',
+    // flex: 1,
+    backgroundColor: '#c2ef99',
     // alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-around',
     padding: 20,
     margin: 20,
+  },
+  addUserButton: {
+    fontSize: 32,
+    color: 'green',
+    padding: 10,
   },
 });
