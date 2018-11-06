@@ -12,8 +12,13 @@ import {
   Icon,
 } from 'expo';
 
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
 import AppNavigator from './navigation/AppNavigator';
 import NewGameScreen from './screens/NewGameScreen';
+import CourseScreen from './screens/CourseScreen';
+import reducer from './redux/reducers/reducers';
 
 const styles = StyleSheet.create({
   container: {
@@ -21,6 +26,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
 });
+
+const store = createStore(reducer, applyMiddleware(thunk));
 
 export default class App extends React.Component {
   state = {
@@ -64,10 +71,12 @@ export default class App extends React.Component {
       );
     }
     return (
-      <View style={styles.container}>
-        {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-        <NewGameScreen />
-      </View>
+      <Provider store={store}>
+        <View>
+          {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
+          <CourseScreen />
+        </View>
+      </Provider>
     );
   }
 }
