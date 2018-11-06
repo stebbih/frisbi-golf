@@ -1,111 +1,101 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
-    StyleSheet,
-    Text,
-    View,
-    TouchableHighlight,
-    Animated
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
 } from 'react-native';
+import { Constants } from 'expo';
+import Collapsible from 'react-native-collapsible';
 import { FontAwesome } from '@expo/vector-icons';
 
-
-var styles = StyleSheet.create({
-    container: {
-        backgroundColor: '#fff',
-        margin:10,
-        overflow:'hidden',
-        height: 10
-    },
-    rulesContainer: {
-        backgroundColor: '#fff',
-        flexDirection: 'row'
-    },
-    ruleTitle: {
-        flex: 1,
-        padding: 10
-    },
-    ruleButton: {
-        fontSize: 40
+export default class Rule extends Component {
+  constructor(props) {
+    super(props);
+    
+    this.state = {  
+      activeSections: [],
+      collapsed: true,
+      icon: 'angle-up',
+      title: props.title,
+      text: props.text,
     }
-})
+  };
 
-export default class Rule extends Component{
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            title: props.title,
-            expanded: true,
-            icon: 'angle-up',
-            animation: new Animated.Value(),
-            expandHeight: this._setMinHeight.bind(this)
-        }
+  toggleExpanded = () => {
+    const { collapsed } = this.state;
+    if(collapsed) {
+      this.setState({
+        collapsed: false,
+        icon: 'angle-down'
+      })
     }
-
-    expand = () => {
-        const expandedHeight = this.state.expanded ? this.state.maxHeight + this.state.minHeight : this.setState.minHeight;
-        const unExpandendHeight = this.state.expanded ? this.state.minHeight : this.state.maxHeight + this.state.minHeight;
-        const { expanded } = this.state;
-
-        
-        this.state.animation.setValue(expandedHeight);
-
-        if(expanded) {
-            this.setState({
-                expanded: false,
-                icon: 'angle-down',
-            });
-        } else if (!expanded) {
-            this.setState({
-                expanded: true,
-                icon: 'angle-up',
-            });
-        }
-
-        
-        Animated.spring(
-            this.state.animation,
-            {
-                toValue: unExpandendHeight
-            }
-        ).start()
-
-
-
+    else if(!collapsed) {
+      this.setState({
+        collapsed: true,
+        icon: 'angle-up'
+      })
     }
-    _setMinHeight(event) {
-        this.setState({
-            minHeight: event.nativeEvent.layout.height
-        });
-    }
+  };
 
-    _setMaxHeight(event) {
-        this.setState({
-            maxHeight: event.nativeEvent.layout.height
-        });
-    }
+  setSections = sections => {
+    this.setState({
+      activeSections: sections.includes(undefined) ? [] : sections,
+    });
+  };
 
-    render() {
-        const { expanded } = this.state;
-        const { icon } = this.state;
-        const { expandHeight } = this.state;
-        return (
-            <Animated.View
-                style={[styles.container, {height: this.state.animation}]}
-            >
-               <TouchableHighlight
-                    onPress={this.expand}
-                    > 
-                    <View style={styles.rulesContainer}
-                        onLayout={this._setMinHeight.bind(this)}>
-                        <Text style={styles.ruleTitle}>{this.state.title}</Text>
-                            <FontAwesome name={icon} style={styles.ruleButton}></FontAwesome> 
-                    </View>
-                </TouchableHighlight>
-                <View onLayout={this._setMaxHeight.bind(this)}>
-                    {this.props.children}
-                </View>
-            </Animated.View>
-        );
-    }
+
+  render() {
+    const { icon } = this.state;
+    return (
+      <View style={styles.container}>
+        <ScrollView>         
+          <TouchableOpacity onPress={this.toggleExpanded}>
+            <View style={styles.header}>
+              <Text style={styles.headerText}>{this.state.title}</Text>
+              <FontAwesome name={icon} style={styles.angleButton}></FontAwesome>
+            </View>
+          </TouchableOpacity>
+          <Collapsible collapsed={this.state.collapsed}>
+            <View style={styles.content}>
+              <Text>{this.state.text}</Text>
+            </View>
+          </Collapsible>
+        </ScrollView>
+      </View>
+    );
+  }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#c2ef99',
+    paddingTop: Constants.statusBarHeight,
+  },
+  title: {
+    textAlign: 'center',
+    fontSize: 22,
+    fontWeight: '300',
+    marginBottom: 20,
+  },
+  header: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  headerText: {
+    textAlign: 'left',
+    fontSize: 20,
+    fontWeight: '500',
+  },
+  angleButton: {
+    fontSize: 40,
+    textAlign: 'right'
+  },
+  content: {
+    padding: 20,
+    backgroundColor: '#fff',
+  },
+});
