@@ -3,12 +3,12 @@ import { Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 
 import TabBarIcon from '../components/TabBarIcon';
-import CourseScreen from '../screens/CourseScreen';
 import PlayedGamesScreen from '../screens/PlayedGamesScreen';
 import OtherScreen from '../screens/OtherScreen';
 import GameScreen from '../screens/GameScreen';
 import ResultsScreen from '../screens/ResultsScreen';
 import NewGameScreen from '../screens/NewGameScreen';
+import CourseScreen from '../screens/CourseScreen';
 
 const CoursesStack = createStackNavigator({
   Courses: CourseScreen,

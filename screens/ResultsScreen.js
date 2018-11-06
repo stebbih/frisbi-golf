@@ -1,10 +1,10 @@
 import React from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
-import { styles } from '../components/Styles.js';
+import { Text, View } from 'react-native';
+import styles from '../components/Styles';
 
 export default class GameScreen extends React.Component {
   static navigationOptions = {
-    header: null
+    header: null,
   };
 
   render() {

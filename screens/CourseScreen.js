@@ -1,17 +1,34 @@
-import React from 'react';
-import { Text, View } from 'react-native';
-import styles from '../components/Styles.js';
+import React, { Component } from 'react';
+import { Text, View, FlatList } from 'react-native';
+import { connect } from 'react-redux';
+import { getAllCourses } from '../redux/actions/courseAction';
 
-export default class GameScreen extends React.Component {
+class GameScreen extends Component {
   static navigationOptions = {
-    header: null
+    header: null,
   };
 
+  componentDidMount() {
+    this.props.getAllCourses();
+  }
+
   render() {
+    const { courses } = this.props;
     return (
-      <View style={styles.container}>
-        <Text> CourseScreen: Listi af völlum kemur hér! </Text>
+      <View>
+        <FlatList
+          data={courses}
+          keyExtractor={item => item._id}
+          renderItem={({ item }) => <Text>{item.name}</Text>}
+        />
       </View>
     );
   }
 }
+
+const mapStateToProps = ({ courses }) => ({ courses });
+
+export default connect(
+  mapStateToProps,
+  { getAllCourses },
+)(GameScreen);
