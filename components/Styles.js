@@ -15,27 +15,21 @@ export default StyleSheet.create({
     justifyContent: 'center',
   },
   textInputStyle: {
-    height: 30,
-    minWidth: 150,
+    height: 40,
+    minWidth: 170,
     borderColor: 'gray',
     borderWidth: 1,
     flexDirection: 'row',
     fontSize: 15,
-    // backgroundColor: 'blue',
+    backgroundColor: '#fff',
+    marginRight: 10,
   },
   /* *** New Game custom styles *** */
   newGameContainer: {
-    // flex: 1,
     backgroundColor: '#c2ef99',
-    // alignItems: 'center',
     justifyContent: 'space-around',
     padding: 20,
     margin: 20,
-  },
-  addUserButton: {
-    fontSize: 32,
-    color: 'green',
-    padding: 10,
   },
   flatText: {
   },
