@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import {
   ScrollView,
-  StyleSheet,
   Text,
   View,
   TouchableOpacity,
 } from 'react-native';
-import { Constants } from 'expo';
 import Collapsible from 'react-native-collapsible';
 import { FontAwesome } from '@expo/vector-icons';
 import PropTypes from 'prop-types';
