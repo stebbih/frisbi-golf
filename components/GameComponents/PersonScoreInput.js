@@ -13,19 +13,29 @@ class PersonScoreInput extends React.Component {
     };
   }
 
+  /*
+   * Checks if input is a number larger than 0.
+   * If not, marks input as invalid.
+   * If it is empty string it updates the player's score to undefined
+   */
   saveInput = (basketN, playerID, input) => {
-    const regexWs = /^[0-9]*$/;
-    if (regexWs.test(this.state.taskInput)) {
-      this.setState({ validInput: false });
-    } else {
-      this.props.updateScore(basketN, playerID, input);
+    if (input === '') {
+      this.props.updateScore(basketN, playerID, undefined);
       this.setState({ validInput: true });
+      return;
     }
+    const regexWs = /[0123456789]+/g;
+    if (!regexWs.test(input) || parseInt(input, 10) <= 0) {
+      this.setState({ validInput: false });
+      return;
+    }
+    this.props.updateScore(basketN, playerID, input);
+    this.setState({ validInput: true });
   };
 
   render() {
     return (
-      <View key={this.props.playerID} style={styles.gameScreenPlayerContainer}>
+      <View style={styles.gameScreenPlayerContainer}>
         <Text style={styles.gameScreenPlayerText}>{this.props.playerName}</Text>
         <TextInput
           style={this.state.validInput ? styles.scoreInputStyle : styles.scoreInputInvalid}
@@ -33,7 +43,6 @@ class PersonScoreInput extends React.Component {
           maxLength={2}
           onChangeText={input => this.saveInput(this.props.basketNumber, this.props.playerID, input)
           }
-          value={this.state.scoreInput}
         />
       </View>
     );

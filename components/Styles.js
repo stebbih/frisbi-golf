@@ -1,5 +1,6 @@
 import { StyleSheet, Dimensions } from 'react-native';
 import { Constants } from 'expo';
+import Colors from '../constants/Colors';
 
 export default StyleSheet.create({
   appContainer: {
@@ -37,6 +38,7 @@ export default StyleSheet.create({
     color: 'green',
     padding: 10,
   },
+  flatText: {},
   /** Game screen custom styles */
   gameScreenBasketContainer: {
     flex: 1,
@@ -48,11 +50,10 @@ export default StyleSheet.create({
   },
   gameScreenPlayerContainer: {
     flex: 1,
-    width: '100%',
     padding: 10,
-    borderWidth: 2,
-    borderColor: '#fab',
-    backgroundColor: '#fbfbfb',
+    margin: 6,
+    borderWidth: 1,
+    borderColor: '#D9d9d9',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -76,32 +77,36 @@ export default StyleSheet.create({
     height: 40,
     width: 50,
     borderBottomWidth: 1,
-    borderBottomColor: '#fab',
+    borderBottomColor: '#54913a',
     fontSize: 24,
   },
   scoreInputInvalid: {
     height: 40,
     width: 50,
-    borderBottomWidth: 1,
-    borderBottomColor: 'red',
+    borderBottomWidth: 2,
+    borderBottomColor: Colors.warningColor,
     fontSize: 24,
   },
-
   /** OtherScreen styles */
   otherContainer: {
     backgroundColor: '#c2ef99',
   },
   otherBottomContainer: {
     paddingTop: Constants.statusBarHeight,
+    paddingBottom: Constants.statusBarHeight,
+    borderBottomWidth: 2,
+    borderBottomColor: '#8eb787',
   },
   otherText: {
     fontSize: 24,
     fontWeight: 'bold',
     justifyContent: 'space-around',
+    paddingLeft: 15,
   },
   otherButtonRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    paddingRight: 15,
   },
   otherButtonsIcon: {
     fontSize: 40,
@@ -111,6 +116,8 @@ export default StyleSheet.create({
     flex: 1,
     backgroundColor: '#c2ef99',
     paddingTop: Constants.statusBarHeight,
+    borderBottomWidth: 2,
+    borderBottomColor: '#8eb787',
   },
   ruleTitle: {
     textAlign: 'center',
@@ -127,10 +134,13 @@ export default StyleSheet.create({
     textAlign: 'left',
     fontSize: 20,
     fontWeight: '500',
+    paddingLeft: 15,
   },
   ruleAngleButton: {
     fontSize: 40,
     textAlign: 'right',
+    paddingRight: 15,
+    paddingBottom: 20,
   },
   ruleContent: {
     padding: 20,
@@ -138,5 +148,9 @@ export default StyleSheet.create({
   },
   rulePageContainer: {
     backgroundColor: '#c2ef99',
+  },
+  /** Trophy style */
+  trophyStyle: {
+    fontSize: 26,
   },
 });

@@ -20,7 +20,12 @@ class GameScreen extends React.Component {
   }
 
   renderPlayer = (basketNum, player) => (
-    <PersonScoreInput playerID={player.id} playerName={player.name} basketNum={basketNum} />
+    <PersonScoreInput
+      key={player.id}
+      playerID={player.id}
+      playerName={player.name}
+      basketNumber={basketNum}
+    />
   );
 
   renderBasket = obj => (
