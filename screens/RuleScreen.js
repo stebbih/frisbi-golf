@@ -9,13 +9,13 @@ import styles from '../components/Styles';
 
 export default class RulePage extends Component {
     static navigationOptions = {
-      title: 'Til baka',
+      title: 'REGLUR',
       headerStyle: {
         backgroundColor: 'green',
       },
       headerTintColor: '#fff',
       headerTitleStyle: {
-        fontWeight: 'bold',
+        fontSize: 15,
       },
     };
 

@@ -7,7 +7,13 @@ import PersonScoreInput from '../components/GameComponents/PersonScoreInput';
 
 class GameScreen extends React.Component {
   static navigationOptions = {
-    header: null,
+    headerStyle: {
+      backgroundColor: 'green',
+    },
+    headerTintColor: '#fff',
+    headerTitleStyle: {
+      fontSize: 16,
+    },
   };
 
   constructor(props) {

@@ -6,7 +6,14 @@ import FlatListTab from '../components/courseComponents/FlatListTab';
 
 class GameScreen extends Component {
   static navigationOptions = {
-    header: null,
+    title: 'VELLIR',
+    headerStyle: {
+      backgroundColor: 'green',
+    },
+    headerTintColor: '#fff',
+    headerTitleStyle: {
+      fontSize: 16,
+    },
   };
 
   componentDidMount() {
