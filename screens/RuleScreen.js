@@ -8,13 +8,24 @@ import Reglur from '../data/Reglur.json';
 import styles from '../components/Styles';
 
 export default class RulePage extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      rules: Reglur,
+    static navigationOptions = {
+      title: 'Til baka',
+      headerStyle: {
+        backgroundColor: 'green',
+      },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      },
     };
-  }
+
+    constructor(props) {
+      super(props);
+
+      this.state = {
+        rules: Reglur,
+      };
+    }
 
     _renderItem = ({ item }) => (
       <Rule title={item.title} text={item.content} />

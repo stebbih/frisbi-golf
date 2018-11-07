@@ -63,6 +63,9 @@ OtherStack.navigationOptions = {
   tabBarOptions: {
     activeTintColor: 'green',
   },
+  headerBar: {
+    color: '#fab',
+  },
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}

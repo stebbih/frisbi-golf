@@ -83,13 +83,13 @@ export default StyleSheet.create({
   },
   /** OtherScreen styles */
   otherContainer: {
-    backgroundColor: '#c2ef99',
+    backgroundColor: '#fff',
   },
   otherBottomContainer: {
     paddingTop: Constants.statusBarHeight,
     paddingBottom: Constants.statusBarHeight,
     borderBottomWidth: 2,
-    borderBottomColor: '#8eb787',
+    borderBottomColor: '#ccc',
   },
   otherText: {
     fontSize: 24,
@@ -108,10 +108,8 @@ export default StyleSheet.create({
   /** Rules and RuleScreen styles */
   ruleContainer: {
     flex: 1,
-    backgroundColor: '#c2ef99',
+    backgroundColor: '#fff',
     paddingTop: Constants.statusBarHeight,
-    borderBottomWidth: 2,
-    borderBottomColor: '#8eb787',
   },
   ruleTitle: {
     textAlign: 'center',
@@ -123,6 +121,8 @@ export default StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
+    borderBottomWidth: 2,
+    borderBottomColor: '#ccc',
   },
   ruleHeaderText: {
     textAlign: 'left',
@@ -139,9 +139,11 @@ export default StyleSheet.create({
   ruleContent: {
     padding: 20,
     backgroundColor: '#fff',
+    borderBottomWidth: 2,
+    borderBottomColor: '#ccc',
   },
   rulePageContainer: {
-    backgroundColor: '#c2ef99',
+    backgroundColor: '#fff',
   },
   /** Trophy style */
   trophyStyle: {
