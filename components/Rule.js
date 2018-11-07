@@ -71,14 +71,7 @@ export default class Rule extends Component {
       })
     }
   };
-
-  setSections = sections => {
-    this.setState({
-      activeSections: sections.includes(undefined) ? [] : sections,
-    });
-  };
-
-
+  
   render() {
     const { icon } = this.state;
     return (

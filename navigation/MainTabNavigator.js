@@ -13,6 +13,8 @@ import OtherScreen from '../screens/OtherScreen';
 import GameScreen from '../screens/GameScreen';
 import ResultsScreen from '../screens/ResultsScreen';
 import NewGameScreen from '../screens/NewGameScreen';
+import RuleScreen from '../screens/RuleScreen';
+import AboutUsScreen from '../screens/AboutUsScreen';
 
 const CoursesStack = createStackNavigator({
   Courses: CourseScreen,
@@ -54,7 +56,9 @@ PlayedGamesStack.navigationOptions = {
 };
 
 const OtherStack = createStackNavigator({
-  Other: OtherScreen
+  Other: OtherScreen,
+  Rules: RuleScreen,
+  AboutUs: AboutUsScreen
 });
 
 OtherStack.navigationOptions = {
