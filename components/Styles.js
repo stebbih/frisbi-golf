@@ -1,5 +1,6 @@
 import { StyleSheet, Dimensions } from 'react-native';
 import { Constants } from 'expo';
+import Colors from '../constants/Colors';
 
 export default StyleSheet.create({
   appContainer: {
@@ -35,8 +36,7 @@ export default StyleSheet.create({
     color: 'green',
     padding: 10,
   },
-  flatText: {
-  },
+  flatText: {},
   /** Game screen custom styles */
   gameScreenBasketContainer: {
     flex: 1,
@@ -48,11 +48,10 @@ export default StyleSheet.create({
   },
   gameScreenPlayerContainer: {
     flex: 1,
-    width: '100%',
     padding: 10,
-    borderWidth: 2,
-    borderColor: '#fab',
-    backgroundColor: '#fbfbfb',
+    margin: 6,
+    borderWidth: 1,
+    borderColor: '#D9d9d9',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -76,7 +75,14 @@ export default StyleSheet.create({
     height: 40,
     width: 50,
     borderBottomWidth: 1,
-    borderBottomColor: '#fab',
+    borderBottomColor: '#54913a',
+    fontSize: 24,
+  },
+  scoreInputInvalid: {
+    height: 40,
+    width: 50,
+    borderBottomWidth: 2,
+    borderBottomColor: Colors.warningColor,
     fontSize: 24,
   },
   /** OtherScreen styles */
