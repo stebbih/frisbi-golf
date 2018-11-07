@@ -7,7 +7,7 @@ import styles from '../components/Styles';
 
 export default class OtherScreen extends React.Component {
   static navigationOptions = {
-    title: 'ANNAÐ',
+    title: 'Lalalal',
     headerStyle: {
       backgroundColor: 'green',
     },
