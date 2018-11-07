@@ -5,8 +5,6 @@ export default StyleSheet.create({
   appContainer: {
     flex: 1,
     backgroundColor: '#fff',
-    margin: 4,
-    marginTop: Constants.statusBarHeight,
   },
   container: {
     flex: 1,
@@ -128,12 +126,12 @@ export default StyleSheet.create({
     textAlign: 'left',
     fontSize: 20,
     fontWeight: '500',
-    paddingLeft: 15,
+    paddingLeft: 20,
   },
   ruleAngleButton: {
     fontSize: 40,
     textAlign: 'right',
-    paddingRight: 15,
+    paddingRight: 20,
     paddingBottom: 20,
   },
   ruleContent: {
@@ -141,6 +139,9 @@ export default StyleSheet.create({
     backgroundColor: '#fff',
     borderBottomWidth: 2,
     borderBottomColor: '#ccc',
+  },
+  rulesContentText: {
+    fontSize: 16,
   },
   rulePageContainer: {
     backgroundColor: '#fff',
@@ -153,7 +154,7 @@ export default StyleSheet.create({
   /** CourseScreen Styles */
   courseContainer: {
     flex: 1,
-    backgroundColor: '#c2ef99',
+    backgroundColor: '#fff',
     paddingTop: Constants.statusBarHeight,
   },
   courseTitle: {
@@ -166,6 +167,9 @@ export default StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
+    borderBottomWidth: 2,
+    borderBottomColor: '#ccc',
+    paddingLeft: 20,
   },
   courseHeaderText: {
     textAlign: 'left',
@@ -175,9 +179,19 @@ export default StyleSheet.create({
   courseAngleButton: {
     fontSize: 40,
     textAlign: 'right',
+    paddingRight: 20,
   },
   courseContent: {
     padding: 20,
     backgroundColor: '#fff',
+    borderBottomWidth: 2,
+    borderBottomColor: '#ccc',
+  },
+  /** AboutUsScreen styles */
+  aboutUsScreenContainer: {
+    backgroundColor: '#fff',
+  },
+  aboutUsScreenText: {
+    fontSize: 16,
   },
 });
