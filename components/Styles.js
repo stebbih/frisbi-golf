@@ -37,6 +37,8 @@ export default StyleSheet.create({
     color: 'green',
     padding: 10,
   },
+  flatText: {
+  },
   /** Game screen custom styles */
   gameScreenBasketContainer: {
     flex: 1,
@@ -79,22 +81,26 @@ export default StyleSheet.create({
     borderBottomColor: '#fab',
     fontSize: 24,
   },
-
   /** OtherScreen styles */
   otherContainer: {
-    backgroundColor: '#c2ef99',
+    backgroundColor: '#fff',
   },
   otherBottomContainer: {
     paddingTop: Constants.statusBarHeight,
+    paddingBottom: Constants.statusBarHeight,
+    borderBottomWidth: 2,
+    borderBottomColor: '#ccc',
   },
   otherText: {
     fontSize: 24,
     fontWeight: 'bold',
     justifyContent: 'space-around',
+    paddingLeft: 15,
   },
   otherButtonRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    paddingRight: 15,
   },
   otherButtonsIcon: {
     fontSize: 40,
@@ -102,7 +108,7 @@ export default StyleSheet.create({
   /** Rules and RuleScreen styles */
   ruleContainer: {
     flex: 1,
-    backgroundColor: '#c2ef99',
+    backgroundColor: '#fff',
     paddingTop: Constants.statusBarHeight,
   },
   ruleTitle: {
@@ -115,22 +121,33 @@ export default StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
+    borderBottomWidth: 2,
+    borderBottomColor: '#ccc',
   },
   ruleHeaderText: {
     textAlign: 'left',
     fontSize: 20,
     fontWeight: '500',
+    paddingLeft: 15,
   },
   ruleAngleButton: {
     fontSize: 40,
     textAlign: 'right',
+    paddingRight: 15,
+    paddingBottom: 20,
   },
   ruleContent: {
     padding: 20,
     backgroundColor: '#fff',
+    borderBottomWidth: 2,
+    borderBottomColor: '#ccc',
   },
   rulePageContainer: {
-    backgroundColor: '#c2ef99',
+    backgroundColor: '#fff',
+  },
+  /** Trophy style */
+  trophyStyle: {
+    fontSize: 26,
   },
 
   /** CourseScreen Styles */
