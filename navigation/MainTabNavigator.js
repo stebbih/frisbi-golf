@@ -14,10 +14,10 @@ import AboutUsScreen from '../screens/AboutUsScreen';
 import Styles from '../components/Styles';
 
 const CoursesStack = createStackNavigator({
-  Game: GameScreen,
+  // Game: GameScreen,
   Courses: CourseScreen,
   NewGame: NewGameScreen,
-  // Game: GameScreen,
+  Game: GameScreen,
   GameResults: ResultsScreen,
 });
 
