@@ -1,6 +1,7 @@
 import React from 'react';
 import { Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
+import { FontAwesome } from '@expo/vector-icons';
 import TabBarIcon from '../components/TabBarIcon';
 import PlayedGamesScreen from '../screens/PlayedGamesScreen';
 import OtherScreen from '../screens/OtherScreen';
@@ -10,6 +11,7 @@ import NewGameScreen from '../screens/NewGameScreen';
 import CourseScreen from '../screens/CourseScreen';
 import RuleScreen from '../screens/RuleScreen';
 import AboutUsScreen from '../screens/AboutUsScreen';
+import Styles from '../components/Styles';
 
 const CoursesStack = createStackNavigator({
   NewGame: NewGameScreen,
@@ -20,6 +22,9 @@ const CoursesStack = createStackNavigator({
 
 CoursesStack.navigationOptions = {
   tabBarLabel: 'Vellir',
+  tabBarOptions: {
+    activeTintColor: 'green',
+  },
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -34,10 +39,15 @@ const PlayedGamesStack = createStackNavigator({
 
 PlayedGamesStack.navigationOptions = {
   tabBarLabel: 'Leikir',
+  tabBarOptions: {
+    activeTintColor: 'green',
+  },
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon
+    <FontAwesome
       focused={focused}
-      name={Platform.OS === 'ios' ? `ios-clipboard${focused ? '' : '-outline'}` : 'md-clipboard'}
+      name="trophy"
+      style={Styles.trophyStyle}
+      color={focused ? 'green' : '#ccc'}
     />
   ),
 };
@@ -50,6 +60,12 @@ const OtherStack = createStackNavigator({
 
 OtherStack.navigationOptions = {
   tabBarLabel: 'Annað',
+  tabBarOptions: {
+    activeTintColor: 'green',
+  },
+  headerBar: {
+    color: '#fab',
+  },
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
