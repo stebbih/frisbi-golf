@@ -37,6 +37,8 @@ export default StyleSheet.create({
     color: 'green',
     padding: 10,
   },
+  flatText: {
+  },
   /** Game screen custom styles */
   gameScreenBasketContainer: {
     flex: 1,
@@ -79,7 +81,6 @@ export default StyleSheet.create({
     borderBottomColor: '#fab',
     fontSize: 24,
   },
-
   /** OtherScreen styles */
   otherContainer: {
     backgroundColor: '#c2ef99',
