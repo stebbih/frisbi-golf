@@ -32,12 +32,13 @@ export default StyleSheet.create({
     padding: 20,
     margin: 20,
   },
-<<<<<<< HEAD
   addUserButton: {
     fontSize: 32,
     color: 'green',
     padding: 10,
-=======
+  },
+  flatText: {
+  },
   /** Game screen custom styles */
   gameScreenBasketContainer: {
     flex: 1,
@@ -79,6 +80,5 @@ export default StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#fab',
     fontSize: 24,
->>>>>>> 56dd143d448d1660434ceda10d5eef9c3c94a840
   },
 });
