@@ -43,6 +43,8 @@ class GameScreen extends React.Component {
   );
 
   render() {
+    console.log('RENDER');
+    console.log(this.props.currentGame);
     return (
       <ScrollView horizontal pagingEnabled>
         {this.props.currentGame.map(obj => this.renderBasket(obj))}
