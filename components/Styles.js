@@ -86,15 +86,20 @@ export default StyleSheet.create({
   },
   otherBottomContainer: {
     paddingTop: Constants.statusBarHeight,
+    paddingBottom: Constants.statusBarHeight,
+    borderBottomWidth: 2,
+    borderBottomColor: '#8eb787',
   },
   otherText: {
     fontSize: 24,
     fontWeight: 'bold',
     justifyContent: 'space-around',
+    paddingLeft: 15,
   },
   otherButtonRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    paddingRight: 15,
   },
   otherButtonsIcon: {
     fontSize: 40,
@@ -104,6 +109,8 @@ export default StyleSheet.create({
     flex: 1,
     backgroundColor: '#c2ef99',
     paddingTop: Constants.statusBarHeight,
+    borderBottomWidth: 2,
+    borderBottomColor: '#8eb787',
   },
   ruleTitle: {
     textAlign: 'center',
@@ -120,10 +127,13 @@ export default StyleSheet.create({
     textAlign: 'left',
     fontSize: 20,
     fontWeight: '500',
+    paddingLeft: 15,
   },
   ruleAngleButton: {
     fontSize: 40,
     textAlign: 'right',
+    paddingRight: 15,
+    paddingBottom: 20,
   },
   ruleContent: {
     padding: 20,
@@ -131,5 +141,9 @@ export default StyleSheet.create({
   },
   rulePageContainer: {
     backgroundColor: '#c2ef99',
+  },
+  /** Trophy style */
+  trophyStyle: {
+    fontSize: 26,
   },
 });
