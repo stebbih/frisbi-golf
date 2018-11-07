@@ -1,16 +1,17 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 import styles from '../components/Styles.js';
+import ResultsScreen from './ResultsScreen';
 
 export default class GameScreen extends React.Component {
   static navigationOptions = {
-    header: null
+    header: null,
   };
 
   render() {
     return (
-      <View style={styles.container}>
-        <Text> Played games listi kemur hér! </Text>
+      <View style={{ width: '100%', marginTop: 40 }}>
+        <ResultsScreen />
       </View>
     );
   }

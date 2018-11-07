@@ -3,12 +3,13 @@ import { View, FlatList } from 'react-native';
 import { connect } from 'react-redux';
 import { getAllCourses } from '../redux/actions/courseAction';
 import FlatListTab from '../components/courseComponents/FlatListTab';
+import Colors from '../constants/Colors';
 
 class GameScreen extends Component {
   static navigationOptions = {
     title: 'VELLIR',
     headerStyle: {
-      backgroundColor: 'green',
+      backgroundColor: Colors.tintColor,
     },
     headerTintColor: '#fff',
     headerTitleStyle: {
@@ -42,4 +43,7 @@ class GameScreen extends Component {
 
 const mapStateToProps = ({ courses }) => ({ courses });
 
-export default connect(mapStateToProps, { getAllCourses })(GameScreen);
+export default connect(
+  mapStateToProps,
+  { getAllCourses },
+)(GameScreen);

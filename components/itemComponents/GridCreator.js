@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
-import { Table, TableWrapper, Row, Rows, Col, Cols, Cell } from 'react-native-table-component';
-import { Col, Row, Grid } from 'react-native-easy-grid';
-import { connect } from 'redux';
+import { Table, Row, Rows } from 'react-native-table-component';
+import { connect } from 'react-redux';
 
 const styles = StyleSheet.create({
   container: {
@@ -23,30 +22,78 @@ const styles = StyleSheet.create({
 class GridCreator extends Component {
   constructor() {
     super();
-    this.state = {
-      tableHead: ['number', 'player1', 'player2'],
-      tableData: [
-        ['1', '3', '3'],
-        ['2', '3', '3'],
-        ['3', '3', '3'],
-        ['4', '3', '3'],
-        ['5', '3', '3'],
-        ['6', '3', '3'],
-        ['7', '3', '3'],
-        ['8', '3', '3'],
-      ],
-    };
+    this.state = {};
   }
 
   render() {
-    const state = this.state;
-    const baskets = 9;
-    const players = 4;
+    const players = ['Anna', 'Birna', 'Stebbi'];
+    const game = [
+      {
+        basketNum: 1,
+        players: [
+          {
+            id: 1,
+            name: 'Anna',
+            score: '1',
+          },
+          {
+            id: 2,
+            name: 'Birna',
+            score: '2',
+          },
+          {
+            id: 3,
+            name: 'Stebbi',
+            score: '4',
+          },
+        ],
+      },
+      {
+        basketNum: 2,
+        players: [
+          {
+            id: 1,
+            name: 'Anna',
+            score: '3',
+          },
+          {
+            id: 2,
+            name: 'Birna',
+            score: '4',
+          },
+          {
+            id: 3,
+            name: 'Stebbi',
+            score: '4',
+          },
+        ],
+      },
+    ];
+
+    const tableHead = ['KARFA'];
+    players.forEach((player) => {
+      tableHead.push(player);
+    });
+    const tableData = [];
+    const tableSum = ['SUMMA:'];
+    for (let i = 0; i < players.length; i += 1) {
+      tableSum.push(0);
+    }
+    game.forEach((basket) => {
+      const tableRow = [basket.basketNum];
+      basket.players.forEach((player) => {
+        tableRow.push(player.score);
+        tableSum[player.id] += parseInt(player.score, 10);
+      });
+      tableData.push(tableRow);
+    });
+
     return (
       <View style={styles.containe}>
-        <Table borderStyle={{ borderWidth: 2, borderColor: '#c8e1ff' }}>
-          <Row data={state.tableHead} style={styles.head} textStyle={styles.text}/>
-          <Rows data={state.tableData} textStyle={styles.text}/>
+        <Table borderStyle={{ borderWidth: 2, borderColor: 'darkgray' }}>
+          <Row data={tableHead} style={styles.head} textStyle={styles.text} />
+          <Rows data={tableData} textStyle={styles.text} />
+          <Row data={tableSum} style={styles.head} textStyle={styles.text} />
         </Table>
       </View>
     );
@@ -55,4 +102,7 @@ class GridCreator extends Component {
 
 const mapStateToProps = ({ courses, currentGame }) => ({ courses, currentGame });
 
-export default connect(mapStateToProps, null)(GridCreator);
+export default connect(
+  mapStateToProps,
+  null,
+)(GridCreator);

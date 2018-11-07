@@ -9,8 +9,6 @@ export default class GameScreen extends React.Component {
   };
 
   render() {
-    return (
-      <GridCreator />
-    );
+    return <GridCreator />;
   }
 }
