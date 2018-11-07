@@ -18,7 +18,6 @@ const CoursesStack = createStackNavigator({
   Game: GameScreen,
   Courses: CourseScreen,
   NewGame: NewGameScreen,
-  // Game: GameScreen,
   GameResults: ResultsScreen,
 });
 

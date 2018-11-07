@@ -4,35 +4,29 @@ import {
 } from 'react-native';
 
 import { Feather } from '@expo/vector-icons';
+import { connect } from 'react-redux';
 import styles from '../components/Styles';
+
+import { addPlayers } from '../redux/actions/newGameAction';
 
 // Gera array af userum og senda a GameScreen
 
-export default class NewGameScreen extends React.Component {
+class NewGameScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       // courseLength: 8,
-      playerArr: [],
+      // playerArr: [],
       userName: '',
-      len: 1,
     };
   }
 
-  pressedAddUser = () => {
-    const { userName, len } = this.state;
+  pressedAddUser = (user) => {
+    const { userName } = this.state;
 
-    // if (userName !== '') {
-    //   game.push(userName);
-    // }
-    // console.warn(game);
-    this.setState({ len: len + 1 });
-    const myObj = {
-      id: len,
-      key: userName,
-    };
-
-    this.state.playerArr.push(myObj);
+    if (userName !== '') {
+      this.props.addPlayers(user);
+    }
   }
 
   pressedPlay = () => {
@@ -40,33 +34,35 @@ export default class NewGameScreen extends React.Component {
   }
 
   render() {
-    const myObj = {
-      id: 1,
-      key: 'Bla',
-    };
-    this.state.playerArr.push(myObj);
+    const { players, navigation } = this.props;
 
-    // console.warn(this.state.playerArr);
-    // const pArray = this.state.playerArr;
     return (
       <View style={styles.container}>
         <View style={styles.newGameContainer}>
-          <Text>Skráðu leikmenn</Text>
-          <TextInput onChangeText={userName => this.setState({ userName })} style={styles.textInputStyle} />
-          <TouchableHighlight onPress={this.pressedAddUser}>
-            <Feather name="user-plus" style={styles.addUserButton} />
-          </TouchableHighlight>
-          <Button onPress={this.pressedPlay} title="Spila!" color="green" />
+          <Text style={{ fontSize: 20, marginBottom: 15 }}>Skráðu leikmenn</Text>
+          <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+            <TextInput onChangeText={userName => this.setState({ userName })} style={styles.textInputStyle} />
+            <TouchableHighlight onPress={() => this.pressedAddUser(this.state.userName)}>
+              <Feather name="user-plus" color="green" size={40} />
+            </TouchableHighlight>
+          </View>
+          <FlatList
+            data={players}
+            renderItem={({ item }) => (<Text key={item.id} style={styles.flatText}>{item.name}</Text>)}
+            // removeUser
+            keyExtractor={item => item.id}
+          />
+          <Button onPress={() => navigation.navigate('Game')} title="Spila!" color="green" />
         </View>
-
-        <FlatList
-          data={this.state.playerArr}
-          extraData={this.state.playerArr}
-          renderItem={({ item }) => (<Text style={styles.flatText}>Ha</Text>)}
-          // removeUser
-          keyExtractor={item => item.id}
-        />
       </View>
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    players: state.addPlayers,
+  };
+}
+
+export default connect(mapStateToProps, { addPlayers })(NewGameScreen);
