@@ -25,12 +25,17 @@ export default StyleSheet.create({
   },
   /* *** New Game custom styles *** */
   newGameContainer: {
-    //flex: 1,
-    backgroundColor: 'red',
+    // flex: 1,
+    backgroundColor: '#c2ef99',
     // alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-around',
     padding: 20,
     margin: 20,
+  },
+  addUserButton: {
+    fontSize: 32,
+    color: 'green',
+    padding: 10,
   },
   /** Game screen custom styles */
   gameScreenBasketContainer: {
@@ -73,5 +78,58 @@ export default StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#fab',
     fontSize: 24,
+  },
+
+  /** OtherScreen styles */
+  otherContainer: {
+    backgroundColor: '#c2ef99',
+  },
+  otherBottomContainer: {
+    paddingTop: Constants.statusBarHeight,
+  },
+  otherText: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    justifyContent: 'space-around',
+  },
+  otherButtonRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  otherButtonsIcon: {
+    fontSize: 40,
+  },
+  /** Rules and RuleScreen styles */
+  ruleContainer: {
+    flex: 1,
+    backgroundColor: '#c2ef99',
+    paddingTop: Constants.statusBarHeight,
+  },
+  ruleTitle: {
+    textAlign: 'center',
+    fontSize: 22,
+    fontWeight: '300',
+    marginBottom: 20,
+  },
+  ruleHeader: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  ruleHeaderText: {
+    textAlign: 'left',
+    fontSize: 20,
+    fontWeight: '500',
+  },
+  ruleAngleButton: {
+    fontSize: 40,
+    textAlign: 'right',
+  },
+  ruleContent: {
+    padding: 20,
+    backgroundColor: '#fff',
+  },
+  rulePageContainer: {
+    backgroundColor: '#c2ef99',
   },
 });
