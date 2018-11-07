@@ -4,16 +4,17 @@ import {
 } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import styles from '../components/Styles';
+import Color from '../constants/Colors';
 
 export default class OtherScreen extends React.Component {
   static navigationOptions = {
-    title: 'Annað',
+    title: 'ANNAÐ',
     headerStyle: {
-      backgroundColor: 'green',
+      backgroundColor: Color.tintColor,
     },
     headerTintColor: '#fff',
     headerTitleStyle: {
-      fontWeight: 'bold',
+      fontSize: 16,
     },
   };
 

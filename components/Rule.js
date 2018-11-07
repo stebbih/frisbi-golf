@@ -49,7 +49,7 @@ export default class Rule extends Component {
           </TouchableOpacity>
           <Collapsible collapsed={this.state.collapsed}>
             <View style={styles.ruleContent}>
-              <Text>{this.state.text}</Text>
+              <Text style={styles.rulesContentText}>{this.state.text}</Text>
             </View>
           </Collapsible>
         </ScrollView>
