@@ -132,4 +132,35 @@ export default StyleSheet.create({
   rulePageContainer: {
     backgroundColor: '#c2ef99',
   },
+
+  /** CourseScreen Styles */
+  courseContainer: {
+    flex: 1,
+    backgroundColor: '#c2ef99',
+    paddingTop: Constants.statusBarHeight,
+  },
+  courseTitle: {
+    textAlign: 'center',
+    fontSize: 22,
+    fontWeight: '300',
+    marginBottom: 20,
+  },
+  courseHeader: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  courseHeaderText: {
+    textAlign: 'left',
+    fontSize: 20,
+    fontWeight: '500',
+  },
+  courseAngleButton: {
+    fontSize: 40,
+    textAlign: 'right',
+  },
+  courseContent: {
+    padding: 20,
+    backgroundColor: '#fff',
+  },
 });

@@ -10,39 +10,7 @@ import { Constants } from 'expo';
 import Collapsible from 'react-native-collapsible';
 import { FontAwesome } from '@expo/vector-icons';
 import PropTypes from 'prop-types';
-
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#c2ef99',
-    paddingTop: Constants.statusBarHeight,
-  },
-  title: {
-    textAlign: 'center',
-    fontSize: 22,
-    fontWeight: '300',
-    marginBottom: 20,
-  },
-  header: {
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  headerText: {
-    textAlign: 'left',
-    fontSize: 20,
-    fontWeight: '500',
-  },
-  angleButton: {
-    fontSize: 40,
-    textAlign: 'right',
-  },
-  content: {
-    padding: 20,
-    backgroundColor: '#fff',
-  },
-});
+import styles from '../Styles';
 
 export default class FlatListTab extends Component {
   constructor(props) {
@@ -76,14 +44,16 @@ export default class FlatListTab extends Component {
       courseLength,
     } = this.props;
     return (
-      <View style={styles.container}>
+      <View style={styles.courseContainer}>
         <ScrollView>
           <TouchableOpacity onPress={this.toggleExpanded}>
-            <Text>{name}</Text>
-            <FontAwesome name={icon} style={styles.angleButton} />
+            <View style={styles.courseHeader}>
+              <Text style={styles.courseHeaderText}>{name}</Text>
+              <FontAwesome name={icon} style={styles.courseAngleButton} />
+            </View>
           </TouchableOpacity>
           <Collapsible collapsed={collapsed}>
-            <View style={styles.content}>
+            <View style={styles.courseContent}>
               <Text>{location}</Text>
               <Text>{courseLength}</Text>
             </View>
