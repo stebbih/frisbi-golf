@@ -1,12 +1,11 @@
 import { StyleSheet, Dimensions } from 'react-native';
 import { Constants } from 'expo';
+import Colors from '../constants/Colors';
 
 export default StyleSheet.create({
   appContainer: {
     flex: 1,
     backgroundColor: '#fff',
-    margin: 4,
-    marginTop: Constants.statusBarHeight,
   },
   container: {
     flex: 1,
@@ -37,8 +36,7 @@ export default StyleSheet.create({
     color: 'green',
     padding: 10,
   },
-  flatText: {
-  },
+  flatText: {},
   /** Game screen custom styles */
   gameScreenBasketContainer: {
     flex: 1,
@@ -50,11 +48,10 @@ export default StyleSheet.create({
   },
   gameScreenPlayerContainer: {
     flex: 1,
-    width: '100%',
     padding: 10,
-    borderWidth: 2,
-    borderColor: '#fab',
-    backgroundColor: '#fbfbfb',
+    margin: 6,
+    borderWidth: 1,
+    borderColor: '#D9d9d9',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -78,7 +75,14 @@ export default StyleSheet.create({
     height: 40,
     width: 50,
     borderBottomWidth: 1,
-    borderBottomColor: '#fab',
+    borderBottomColor: '#54913a',
+    fontSize: 24,
+  },
+  scoreInputInvalid: {
+    height: 40,
+    width: 50,
+    borderBottomWidth: 2,
+    borderBottomColor: Colors.warningColor,
     fontSize: 24,
   },
   /** OtherScreen styles */
@@ -128,12 +132,12 @@ export default StyleSheet.create({
     textAlign: 'left',
     fontSize: 20,
     fontWeight: '500',
-    paddingLeft: 15,
+    paddingLeft: 20,
   },
   ruleAngleButton: {
     fontSize: 40,
     textAlign: 'right',
-    paddingRight: 15,
+    paddingRight: 20,
     paddingBottom: 20,
   },
   ruleContent: {
@@ -141,6 +145,9 @@ export default StyleSheet.create({
     backgroundColor: '#fff',
     borderBottomWidth: 2,
     borderBottomColor: '#ccc',
+  },
+  rulesContentText: {
+    fontSize: 16,
   },
   rulePageContainer: {
     backgroundColor: '#fff',
@@ -153,7 +160,7 @@ export default StyleSheet.create({
   /** CourseScreen Styles */
   courseContainer: {
     flex: 1,
-    backgroundColor: '#c2ef99',
+    backgroundColor: '#fff',
     paddingTop: Constants.statusBarHeight,
   },
   courseTitle: {
@@ -166,6 +173,9 @@ export default StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
+    borderBottomWidth: 2,
+    borderBottomColor: '#ccc',
+    paddingLeft: 20,
   },
   courseHeaderText: {
     textAlign: 'left',
@@ -175,9 +185,19 @@ export default StyleSheet.create({
   courseAngleButton: {
     fontSize: 40,
     textAlign: 'right',
+    paddingRight: 20,
   },
   courseContent: {
     padding: 20,
     backgroundColor: '#fff',
+    borderBottomWidth: 2,
+    borderBottomColor: '#ccc',
+  },
+  /** AboutUsScreen styles */
+  aboutUsScreenContainer: {
+    backgroundColor: '#fff',
+  },
+  aboutUsScreenText: {
+    fontSize: 16,
   },
 });

@@ -52,8 +52,8 @@ export default class FlatListTab extends Component {
           </TouchableOpacity>
           <Collapsible collapsed={collapsed}>
             <View style={styles.courseContent}>
-              <Text>{location}</Text>
-              <Text>{courseLength}</Text>
+              <Text style={styles.rulesContentText}>{location}</Text>
+              <Text style={styles.rulesContentText}>{courseLength}</Text>
             </View>
           </Collapsible>
         </ScrollView>

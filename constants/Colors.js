@@ -10,7 +10,7 @@ export default {
   errorBackground: 'red',
   errorText: '#fff',
   warningBackground: '#EAEB5E',
-  warningText: '#666804',
+  warningColor: '#fc3f3f',
   noticeBackground: tintColor,
   noticeText: '#fff',
 };
