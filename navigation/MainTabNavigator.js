@@ -1,7 +1,6 @@
 import React from 'react';
 import { Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
-
 import TabBarIcon from '../components/TabBarIcon';
 import PlayedGamesScreen from '../screens/PlayedGamesScreen';
 import OtherScreen from '../screens/OtherScreen';
@@ -9,6 +8,8 @@ import GameScreen from '../screens/GameScreen';
 import ResultsScreen from '../screens/ResultsScreen';
 import NewGameScreen from '../screens/NewGameScreen';
 import CourseScreen from '../screens/CourseScreen';
+import RuleScreen from '../screens/RuleScreen';
+import AboutUsScreen from '../screens/AboutUsScreen';
 
 const CoursesStack = createStackNavigator({
   Courses: CourseScreen,
@@ -43,6 +44,8 @@ PlayedGamesStack.navigationOptions = {
 
 const OtherStack = createStackNavigator({
   Other: OtherScreen,
+  Rules: RuleScreen,
+  AboutUs: AboutUsScreen,
 });
 
 OtherStack.navigationOptions = {

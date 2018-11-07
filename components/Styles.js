@@ -81,4 +81,56 @@ export default StyleSheet.create({
     borderBottomColor: '#fab',
     fontSize: 24,
   },
+  /** OtherScreen styles */
+  otherContainer: {
+    backgroundColor: '#c2ef99',
+  },
+  otherBottomContainer: {
+    paddingTop: Constants.statusBarHeight,
+  },
+  otherText: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    justifyContent: 'space-around',
+  },
+  otherButtonRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  otherButtonsIcon: {
+    fontSize: 40,
+  },
+  /** Rules and RuleScreen styles */
+  ruleContainer: {
+    flex: 1,
+    backgroundColor: '#c2ef99',
+    paddingTop: Constants.statusBarHeight,
+  },
+  ruleTitle: {
+    textAlign: 'center',
+    fontSize: 22,
+    fontWeight: '300',
+    marginBottom: 20,
+  },
+  ruleHeader: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  ruleHeaderText: {
+    textAlign: 'left',
+    fontSize: 20,
+    fontWeight: '500',
+  },
+  ruleAngleButton: {
+    fontSize: 40,
+    textAlign: 'right',
+  },
+  ruleContent: {
+    padding: 20,
+    backgroundColor: '#fff',
+  },
+  rulePageContainer: {
+    backgroundColor: '#c2ef99',
+  },
 });
