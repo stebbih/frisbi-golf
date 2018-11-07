@@ -7,9 +7,9 @@ export default {
   window: {
     width,
     height,
+    header: {
+      backgroundcolor: '#fab',
+    },
   },
   isSmallDevice: width < 375,
-  header: {
-
-  },
 };
