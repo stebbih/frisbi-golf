@@ -12,6 +12,7 @@ import CourseScreen from '../screens/CourseScreen';
 import RuleScreen from '../screens/RuleScreen';
 import AboutUsScreen from '../screens/AboutUsScreen';
 import Styles from '../components/Styles';
+import Color from '../constants/Colors';
 
 const CoursesStack = createStackNavigator({
   Game: GameScreen,
@@ -24,7 +25,7 @@ const CoursesStack = createStackNavigator({
 CoursesStack.navigationOptions = {
   tabBarLabel: 'Vellir',
   tabBarOptions: {
-    activeTintColor: 'green',
+    activeTintColor: Color.tintColor,
   },
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
@@ -41,14 +42,14 @@ const PlayedGamesStack = createStackNavigator({
 PlayedGamesStack.navigationOptions = {
   tabBarLabel: 'Leikir',
   tabBarOptions: {
-    activeTintColor: 'green',
+    activeTintColor: Color.tintColor,
   },
   tabBarIcon: ({ focused }) => (
     <FontAwesome
       focused={focused}
       name="trophy"
       style={Styles.trophyStyle}
-      color={focused ? 'green' : '#ccc'}
+      color={focused ? Color.tintColor : '#ccc'}
     />
   ),
 };
@@ -62,10 +63,7 @@ const OtherStack = createStackNavigator({
 OtherStack.navigationOptions = {
   tabBarLabel: 'Annað',
   tabBarOptions: {
-    activeTintColor: 'green',
-  },
-  headerBar: {
-    color: '#fab',
+    activeTintColor: Color.tintColor,
   },
   tabBarIcon: ({ focused }) => (
     <TabBarIcon

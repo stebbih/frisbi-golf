@@ -4,11 +4,13 @@ import { connect } from 'react-redux';
 import { startNewGame, updateScore } from '../redux/actions';
 import styles from '../components/Styles';
 import PersonScoreInput from '../components/GameComponents/PersonScoreInput';
+import Color from '../constants/Colors';
 
 class GameScreen extends React.Component {
   static navigationOptions = {
+    // title: '', // TODO: verður hugsanlega vallarheiti
     headerStyle: {
-      backgroundColor: 'green',
+      backgroundColor: Color.tintColor,
     },
     headerTintColor: '#fff',
     headerTitleStyle: {
