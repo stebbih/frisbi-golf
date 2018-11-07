@@ -79,6 +79,13 @@ export default StyleSheet.create({
     borderBottomColor: '#fab',
     fontSize: 24,
   },
+  scoreInputInvalid: {
+    height: 40,
+    width: 50,
+    borderBottomWidth: 1,
+    borderBottomColor: 'red',
+    fontSize: 24,
+  },
 
   /** OtherScreen styles */
   otherContainer: {
