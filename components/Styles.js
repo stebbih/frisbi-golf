@@ -1,71 +1,135 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 import { Constants } from 'expo';
 
-export default (styles = StyleSheet.create({
+export default StyleSheet.create({
   appContainer: {
     flex: 1,
     backgroundColor: '#fff',
-    marginTop: Constants.statusBarHeight
+    margin: 4,
+    marginTop: Constants.statusBarHeight,
   },
   container: {
     flex: 1,
-    backgroundColor: '#fff'
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  developmentModeText: {
+  textInputStyle: {
+    height: 30,
+    minWidth: 150,
+    borderColor: 'gray',
+    borderWidth: 1,
+    flexDirection: 'row',
+    fontSize: 15,
+    // backgroundColor: 'blue',
+  },
+  /* *** New Game custom styles *** */
+  newGameContainer: {
+    // flex: 1,
+    backgroundColor: '#c2ef99',
+    // alignItems: 'center',
+    justifyContent: 'space-around',
+    padding: 20,
+    margin: 20,
+  },
+  addUserButton: {
+    fontSize: 32,
+    color: 'green',
+    padding: 10,
+  },
+  /** Game screen custom styles */
+  gameScreenBasketContainer: {
+    flex: 1,
+    borderWidth: 1,
+    borderColor: '#999',
+    backgroundColor: '#fbfbfb',
+    width: Dimensions.get('window').width - 8,
+    alignItems: 'center',
+  },
+  gameScreenPlayerContainer: {
+    flex: 1,
+    width: '100%',
+    padding: 10,
+    borderWidth: 2,
+    borderColor: '#fab',
+    backgroundColor: '#fbfbfb',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  gameScreenPlayerText: {
+    fontSize: 20,
+  },
+  gameScreenBasketScrollView: {
+    flex: 1,
+    width: '100%',
+  },
+  gameScreenHeaderContainer: {
+    paddingTop: 20,
+    padding: 10,
+  },
+  gameScreenHeaderText: {
+    fontSize: 30,
+    fontWeight: 'bold',
+  },
+  scoreInputStyle: {
+    height: 40,
+    width: 50,
+    borderBottomWidth: 1,
+    borderBottomColor: '#fab',
+    fontSize: 24,
+  },
+
+  /** OtherScreen styles */
+  otherContainer: {
+    backgroundColor: '#c2ef99',
+  },
+  otherBottomContainer: {
+    paddingTop: Constants.statusBarHeight,
+  },
+  otherText: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    justifyContent: 'space-around',
+  },
+  otherButtonRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  otherButtonsIcon: {
+    fontSize: 40,
+  },
+  /** Rules and RuleScreen styles */
+  ruleContainer: {
+    flex: 1,
+    backgroundColor: '#c2ef99',
+    paddingTop: Constants.statusBarHeight,
+  },
+  ruleTitle: {
+    textAlign: 'center',
+    fontSize: 22,
+    fontWeight: '300',
     marginBottom: 20,
-    color: 'rgba(0,0,0,0.4)',
-    fontSize: 14,
-    lineHeight: 19,
-    textAlign: 'center'
   },
-  contentContainer: {
-    paddingTop: 30
+  ruleHeader: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
-  welcomeContainer: {
-    alignItems: 'center',
-    marginTop: 10,
-    marginBottom: 20
+  ruleHeaderText: {
+    textAlign: 'left',
+    fontSize: 20,
+    fontWeight: '500',
   },
-  welcomeImage: {
-    width: 100,
-    height: 80,
-    resizeMode: 'contain',
-    marginTop: 3,
-    marginLeft: -10
+  ruleAngleButton: {
+    fontSize: 40,
+    textAlign: 'right',
   },
-  getStartedContainer: {
-    alignItems: 'center',
-    marginHorizontal: 50
+  ruleContent: {
+    padding: 20,
+    backgroundColor: '#fff',
   },
-  homeScreenFilename: {
-    marginVertical: 7
+  rulePageContainer: {
+    backgroundColor: '#c2ef99',
   },
-  codeHighlightText: {
-    color: 'rgba(96,100,109, 0.8)'
-  },
-  codeHighlightContainer: {
-    backgroundColor: 'rgba(0,0,0,0.05)',
-    borderRadius: 3,
-    paddingHorizontal: 4
-  },
-  getStartedText: {
-    fontSize: 17,
-    color: 'rgba(96,100,109, 1)',
-    lineHeight: 24,
-    textAlign: 'center'
-  },
-  navigationFilename: {
-    marginTop: 5
-  },
-  helpContainer: {
-    marginTop: 15,
-    alignItems: 'center'
-  },
-  helpLink: {
-    paddingVertical: 15
-  },
-  helpLinkText: {
-    fontSize: 14,
-    color: '#2e78b7'
-  }
-}));
+});

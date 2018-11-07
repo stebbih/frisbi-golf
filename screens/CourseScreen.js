@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { View, FlatList } from 'react-native';
 import { connect } from 'react-redux';
-// import styles from '../components/Styles';
 import { getAllCourses } from '../redux/actions/courseAction';
 import FlatListTab from '../components/courseComponents/FlatListTab';
 
