@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 import styles from '../components/Styles';
+import GridCreator from '../components/itemComponents/GridCreator';
 
 export default class GameScreen extends React.Component {
   static navigationOptions = {
@@ -9,9 +10,7 @@ export default class GameScreen extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Text> Results screen kemur hér! </Text>
-      </View>
+      <GridCreator />
     );
   }
 }
