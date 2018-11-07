@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Text, View, FlatList } from 'react-native';
+import { View, FlatList } from 'react-native';
 import { connect } from 'react-redux';
 // import styles from '../components/Styles';
 import { getAllCourses } from '../redux/actions/courseAction';
+import FlatListTab from '../components/courseComponents/FlatListTab';
 
 class GameScreen extends Component {
   static navigationOptions = {
@@ -21,7 +22,11 @@ class GameScreen extends Component {
           data={courses}
           keyExtractor={item => item._id}
           renderItem={({ item }) => (
-            <Text>{item.name}</Text>
+            <FlatListTab
+              name={item.name}
+              location={item.location}
+              courseLength={item.courseLength}
+            />
           )}
         />
       </View>
@@ -29,9 +34,6 @@ class GameScreen extends Component {
   }
 }
 
-const mapStateToProps = ({ courses }) => {
-  return { courses };
-};
-
+const mapStateToProps = ({ courses }) => ({ courses });
 
 export default connect(mapStateToProps, { getAllCourses })(GameScreen);
