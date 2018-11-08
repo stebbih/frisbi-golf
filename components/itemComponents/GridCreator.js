@@ -26,49 +26,56 @@ class GridCreator extends Component {
   }
 
   render() {
-    const players = ['Anna', 'Birna', 'Stebbi'];
-    const game = [
-      {
-        basketNum: 1,
-        players: [
-          {
-            id: 1,
-            name: 'Anna',
-            score: '1',
-          },
-          {
-            id: 2,
-            name: 'Birna',
-            score: '2',
-          },
-          {
-            id: 3,
-            name: 'Stebbi',
-            score: '4',
-          },
-        ],
-      },
-      {
-        basketNum: 2,
-        players: [
-          {
-            id: 1,
-            name: 'Anna',
-            score: '3',
-          },
-          {
-            id: 2,
-            name: 'Birna',
-            score: '4',
-          },
-          {
-            id: 3,
-            name: 'Stebbi',
-            score: '4',
-          },
-        ],
-      },
-    ];
+    let players;
+    let game;
+    if (this.props.useCurrentGame) {
+      game = this.props.currentGame.game;
+      players = this.props.currentGame.players;
+    } else {
+      players = ['Anna', 'Birna', 'Stebbi'];
+      game = [
+        {
+          basketNum: 1,
+          players: [
+            {
+              id: 1,
+              name: 'Anna',
+              score: '1',
+            },
+            {
+              id: 2,
+              name: 'Birna',
+              score: '2',
+            },
+            {
+              id: 3,
+              name: 'Stebbi',
+              score: '4',
+            },
+          ],
+        },
+        {
+          basketNum: 2,
+          players: [
+            {
+              id: 1,
+              name: 'Anna',
+              score: '3',
+            },
+            {
+              id: 2,
+              name: 'Birna',
+              score: '4',
+            },
+            {
+              id: 3,
+              name: 'Stebbi',
+              score: '4',
+            },
+          ],
+        },
+      ];
+    }
 
     const tableHead = ['KARFA'];
     players.forEach((player) => {
@@ -100,7 +107,7 @@ class GridCreator extends Component {
   }
 }
 
-const mapStateToProps = ({ courses, currentGame }) => ({ courses, currentGame });
+const mapStateToProps = ({ currentGame }) => ({ currentGame });
 
 export default connect(
   mapStateToProps,

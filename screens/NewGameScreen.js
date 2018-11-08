@@ -1,17 +1,10 @@
-/* eslint-disable no-useless-constructor */
 import React from 'react';
-import {
-  Text, View, TextInput, Button, TouchableHighlight, FlatList,
-} from 'react-native';
-
-
+import { View, Button, FlatList } from 'react-native';
 import { connect } from 'react-redux';
 import styles from '../components/Styles';
 import RenderItemComponent from '../components/NewGameComponents/RenderItemComponent';
+import { startNewGame, addPlayers, deletePlayer } from '../redux/actions';
 import AddAndSubmitPlayer from '../components/NewGameComponents/AddAndSubmitPlayer';
-import { addPlayers, deletePlayer } from '../redux/actions/newGameAction';
-
-// Gera array af userum og senda a GameScreen
 
 class NewGameScreen extends React.Component {
   static navigationOptions = {
@@ -27,17 +20,31 @@ class NewGameScreen extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      userName: '',
+    };
   }
+
+  pressedAddUser = (user) => {
+    const { userName } = this.state;
+
+    if (userName !== '') {
+      this.props.addPlayers(user);
+    }
+  };
+
+  startGame = (course, players) => {
+    this.props.startNewGame(course, players);
+    this.props.navigation.navigate('Game');
+  };
 
   removePlayer = (item) => {
     this.props.deletePlayer(item);
-  }
+  };
 
   render() {
     const { players, navigation } = this.props;
-    const {
-      params,
-    } = navigation.state;
+    const { params } = navigation.state;
     return (
       <View style={styles.newGameContainer}>
         <AddAndSubmitPlayer />
@@ -55,7 +62,7 @@ class NewGameScreen extends React.Component {
           />
         </View>
         <View style={styles.buttonView}>
-          <Button onPress={({ course }) => navigation.navigate('Game', course)} title="Spila!" color="green" />
+          <Button onPress={() => this.startGame(params, players)} title="Spila!" color="green" />
         </View>
       </View>
     );
@@ -65,7 +72,11 @@ class NewGameScreen extends React.Component {
 function mapStateToProps(state) {
   return {
     players: state.addPlayers,
+    currentGame: state.currentGame,
   };
 }
 
-export default connect(mapStateToProps, { addPlayers, deletePlayer })(NewGameScreen);
+export default connect(
+  mapStateToProps,
+  { addPlayers, startNewGame, deletePlayer },
+)(NewGameScreen);

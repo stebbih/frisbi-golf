@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { startNewGame, updateScore } from '../redux/actions';
 import styles from '../components/Styles';
 import PersonScoreInput from '../components/GameComponents/PersonScoreInput';
+import GridCreator from '../components/itemComponents/GridCreator';
 import Color from '../constants/Colors';
 
 class GameScreen extends React.Component {
@@ -21,10 +22,6 @@ class GameScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
-  }
-
-  componentDidMount() {
-    this.props.startNewGame(2, ['Anna', 'Birna']);
   }
 
   renderPlayer = (basketNum, player) => (
@@ -50,10 +47,20 @@ class GameScreen extends React.Component {
     </View>
   );
 
+  renderResultsComponent = () => (
+    <View key="resultsComponent" style={styles.gameScreenBasketContainer}>
+      <View style={styles.gameScreenHeaderContainer}>
+        <Text style={styles.gameScreenHeaderText}>NIÐURSTÖÐUR</Text>
+        <GridCreator useCurrentGame gameID={undefined} />
+      </View>
+    </View>
+  );
+
   render() {
     return (
-      <ScrollView horizontal pagingEnabled>
-        {this.props.currentGame.map(obj => this.renderBasket(obj))}
+      <ScrollView horizontal pagingEnabled style={{ margin: 6 }}>
+        {this.props.currentGame.game.map(obj => this.renderBasket(obj))}
+        {this.renderResultsComponent()}
       </ScrollView>
     );
   }

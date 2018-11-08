@@ -7,9 +7,7 @@ const players = (state = [], action) => {
       // state.length === 0 ? idnumber = 1 : idnumber = parseInt(state[state.length - 1].id) + 1;
       return [...state, { id: action.id, name: action.name }];
     case DELETE_PLAYER:
-      let retVal = [];
-      retVal = state.filter(usr => usr.id !== action.id);
-      return retVal;
+      return state.filter(usr => usr.id !== action.id);
     default:
       return state;
   }

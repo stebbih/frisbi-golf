@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import {
-  ScrollView,
-  Text,
-  View,
-  TouchableOpacity,
+  ScrollView, Text, View, TouchableOpacity,
 } from 'react-native';
 import Collapsible from 'react-native-collapsible';
 import { FontAwesome } from '@expo/vector-icons';
@@ -37,11 +34,7 @@ export default class FlatListTab extends Component {
 
   render() {
     const { collapsed, icon } = this.state;
-    const {
-      name,
-      location,
-      courseLength,
-    } = this.props;
+    const { name, location, courseLength } = this.props;
     return (
       <TouchableOpacity onPress={this.toggleExpanded}>
         <View style={styles.collapsibleContainer}>
@@ -72,7 +65,6 @@ export default class FlatListTab extends Component {
             </Collapsible>
           </ScrollView>
         </View>
-
       </TouchableOpacity>
     );
   }
