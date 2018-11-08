@@ -27,14 +27,16 @@ export default StyleSheet.create({
   /* *** New Game custom styles *** */
   newGameContainer: {
     flex: 1,
-    // justifyContent: 'space-between',
-    // padding: 10,
-    // margin: 6,
+    justifyContent: 'space-between',
+    padding: 10,
+    margin: 6,
+    backgroundColor: '#fff',
   },
   flatText: {
     fontSize: 20,
     borderBottomColor: 'gray',
     borderBottomWidth: 1,
+    padding: 10,
   },
   playersAddedView: {
     flex: 1,
@@ -47,8 +49,7 @@ export default StyleSheet.create({
     borderTopColor: 'gray',
   },
   buttonView: {
-    // flex: 1,
-    // alignSelf: 'flex-end',
+    flex: 1,
   },
   invalidText: {
     color: 'red',
@@ -60,7 +61,7 @@ export default StyleSheet.create({
     borderWidth: 1,
     borderColor: '#999',
     backgroundColor: '#fbfbfb',
-    width: Dimensions.get('window').width - 8,
+    width: Dimensions.get('window').width - 12,
     alignItems: 'center',
   },
   gameScreenPlayerContainer: {
@@ -92,7 +93,7 @@ export default StyleSheet.create({
     height: 40,
     width: 50,
     borderBottomWidth: 1,
-    borderBottomColor: '#54913a',
+    borderBottomColor: Colors.tintColor,
     fontSize: 24,
   },
   scoreInputInvalid: {

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { FlatList, View } from 'react-native';
+import { FlatList, View, Platform } from 'react-native';
 import styles from '../components/Styles';
 import Color from '../constants/Colors';
 import JsonText from '../data/Help';
-import Rule from '../components/RulesComponents/Rule';
+import Help from '../components/CollapsibleComponents/CollapsibleComponent';
 
 export default class AboutUsScreen extends Component {
     static navigationOptions = {
@@ -14,6 +14,7 @@ export default class AboutUsScreen extends Component {
       headerTintColor: '#fff',
       headerTitleStyle: {
         fontSize: 16,
+        paddingLeft: Platform.OS === 'ios' ? '0%' : '22%',
       },
     };
 
@@ -25,7 +26,7 @@ export default class AboutUsScreen extends Component {
     }
 
     _renderItem = ({ item }) => (
-      <Rule title={item.title} text={item.content} />
+      <Help title={item.title} text={item.content} />
     )
 
     render() {

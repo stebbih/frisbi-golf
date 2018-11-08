@@ -10,8 +10,6 @@ import styles from '../Styles';
 export default class RenderItemComponent extends React.Component {
   render() {
     const { renderPlayers, isId, removePlayer } = this.props;
-
-
     const swipeoutBtn = [
       {
         text: 'Remove',
@@ -19,7 +17,7 @@ export default class RenderItemComponent extends React.Component {
         onPress: removePlayer,
       },
     ];
-    // TODO STUFF
+
     return (
       <SwipeOut style={{ backgroundColor: 'transparent' }} right={swipeoutBtn}>
         <View style={styles.renderItemView}>

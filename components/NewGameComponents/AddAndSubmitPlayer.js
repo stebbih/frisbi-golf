@@ -25,27 +25,24 @@ class AddAndSubmitPlayer extends React.Component {
     const { userName } = this.state;
 
     // Only whitespaces checker 
-    if (!userName.replace(/\s/g).length) {
+    if (!userName.replace(/\s/g, '').length) {
       this.setState({ invalidPlayername: true });
       this.setState({ userName: '' });
-      console.log('user first: ' + userName);
       return;
     }
     this.setState({ userName: '' });
     this.setState({ invalidPlayername: false });
     this.props.addPlayers(user);
-    console.log("User at end " + userName);
   }
 
   render() {
-    console.log(this.state.userName);
     return (
       <View style={styles.playersAddedView}>
-        <Text style={{ fontSize: 25, marginBottom: 15 }}>Skráðu leikmenn</Text>
+        <Text style={{ fontSize: 25, marginBottom: 5 }}>Skráðu leikmenn</Text>
         <View>
           {this.state.invalidPlayername && <Text style={styles.invalidText}>Ógilt nafn, reyndu aftur</Text>}
         </View>
-        <View style={{ flexDirection: 'row', marginTop: 10 }}>
+        <View style={{ flexDirection: 'row' }}>
           <TextInput onChangeText={val => this.setState({ userName: val })} value={this.state.userName} style={styles.textInputStyle} />
           {this.state.userName === ''
             ? <Feather name="user-plus" color="gray" size={40} />

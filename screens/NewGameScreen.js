@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {
   View,
   // Button,
@@ -9,8 +10,8 @@ import {
 import { connect } from 'react-redux';
 import styles from '../components/Styles';
 import RenderItemComponent from '../components/NewGameComponents/RenderItemComponent';
+import { startNewGame, addPlayers, deletePlayer } from '../redux/actions';
 import AddAndSubmitPlayer from '../components/NewGameComponents/AddAndSubmitPlayer';
-import { addPlayers, deletePlayer } from '../redux/actions/newGameAction';
 import Button from '../components/itemComponents/Button';
 
 
@@ -18,7 +19,7 @@ import Button from '../components/itemComponents/Button';
 
 class NewGameScreen extends React.Component {
   static navigationOptions = {
-    title: 'NYR LEIKUR',
+    title: 'NÝR LEIKUR',
     headerStyle: {
       backgroundColor: 'green',
     },
@@ -32,15 +33,26 @@ class NewGameScreen extends React.Component {
   //   super(props);
   // }
 
+  pressedAddUser = (user) => {
+    const { userName } = this.state;
+
+    if (userName !== '') {
+      this.props.addPlayers(user);
+    }
+  };
+
+  startGame = (course, players) => {
+    this.props.startNewGame(course, players);
+    this.props.navigation.navigate('Game');
+  };
+
   removePlayer = (item) => {
     this.props.deletePlayer(item);
-  }
+  };
 
   render() {
     const { players, navigation } = this.props;
-    const {
-      params,
-    } = navigation.state;
+    const { params } = navigation.state;
     return (
       <View style={styles.newGameContainer}>
         <AddAndSubmitPlayer />
@@ -73,7 +85,11 @@ class NewGameScreen extends React.Component {
 function mapStateToProps(state) {
   return {
     players: state.addPlayers,
+    currentGame: state.currentGame,
   };
 }
 
-export default connect(mapStateToProps, { addPlayers, deletePlayer })(NewGameScreen);
+export default connect(
+  mapStateToProps,
+  { addPlayers, startNewGame, deletePlayer },
+)(NewGameScreen);
