@@ -45,7 +45,9 @@ class NewGameScreen extends React.Component {
 
   render() {
     const { players, navigation } = this.props;
-
+    const {
+      params,
+    } = navigation.state;
     return (
       <View style={styles.newGameContainer}>
         <View style={styles.playersAddedView}>
@@ -72,7 +74,7 @@ class NewGameScreen extends React.Component {
           />
         </View>
         <View style={styles.buttonView}>
-          <Button onPress={() => navigation.navigate('Game')} title="Spila!" color="green" />
+          <Button onPress={({ course }) => navigation.navigate('Game', course)} title="Spila!" color="green" />
         </View>
       </View>
     );
