@@ -24,7 +24,7 @@ class PersonScoreInput extends React.Component {
       this.setState({ validInput: true });
       return;
     }
-    const regexWs = /[0123456789]+/g;
+    const regexWs = /[0-9]+/g;
     if (!regexWs.test(input) || parseInt(input, 10) <= 0) {
       this.setState({ validInput: false });
       return;

@@ -201,6 +201,11 @@ export default StyleSheet.create({
     borderBottomWidth: 2,
     borderBottomColor: '#ccc',
   },
+  courseCollapseTextView: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 25,
+  },
   /** AboutUsScreen styles */
   aboutUsScreenContainer: {
     backgroundColor: '#fff',

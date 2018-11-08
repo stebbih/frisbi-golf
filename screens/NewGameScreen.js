@@ -3,12 +3,10 @@ import {
   Text, View, TextInput, Button, TouchableHighlight, FlatList,
 } from 'react-native';
 
-import SwipeOut from 'react-native-swipeout';
-
 import { Feather } from '@expo/vector-icons';
 import { connect } from 'react-redux';
 import styles from '../components/Styles';
-import RenderItemComponent from '../components/NewGameComponent';
+import RenderItemComponent from '../components/NewGameComponents/RenderItemComponent';
 
 import { addPlayers, deletePlayer } from '../redux/actions/newGameAction';
 
@@ -41,20 +39,12 @@ class NewGameScreen extends React.Component {
     }
   }
 
-  removeUser = (item) => {
+  removePlayer = (item) => {
     this.props.deletePlayer(item);
   }
 
   render() {
     const { players, navigation } = this.props;
-
-    const swipeoutBtn = [
-      {
-        text: 'Remove',
-        backgroundColor: 'red',
-        onPress: () => { this.deletePlayer(); },
-      },
-    ];
 
     return (
       <View style={styles.newGameContainer}>
@@ -71,7 +61,11 @@ class NewGameScreen extends React.Component {
           <FlatList
             data={players}
             renderItem={({ item }) => (
-              <RenderItemComponent />
+              <RenderItemComponent
+                renderPlayers={item.name}
+                isId={item.id}
+                removePlayer={() => this.removePlayer(item.id)}
+              />
             )}
             // removeUser
             keyExtractor={item => item.id}

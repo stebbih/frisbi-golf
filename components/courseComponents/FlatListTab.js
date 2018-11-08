@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 import {
   ScrollView,
-  StyleSheet,
   Text,
   View,
   TouchableOpacity,
 } from 'react-native';
-import { Constants } from 'expo';
 import Collapsible from 'react-native-collapsible';
 import { FontAwesome } from '@expo/vector-icons';
 import PropTypes from 'prop-types';
 import styles from '../Styles';
+import Button from '../itemComponents/Button';
 
 export default class FlatListTab extends Component {
   constructor(props) {
@@ -36,6 +35,10 @@ export default class FlatListTab extends Component {
     }
   };
 
+  startGame = () => {
+
+  }
+
   render() {
     const { collapsed, icon } = this.state;
     const {
@@ -54,8 +57,22 @@ export default class FlatListTab extends Component {
           </TouchableOpacity>
           <Collapsible collapsed={collapsed}>
             <View style={styles.courseContent}>
-              <Text style={styles.rulesContentText}>{location}</Text>
-              <Text style={styles.rulesContentText}>{courseLength}</Text>
+              <View style={styles.courseCollapseTextView}>
+                <Text style={styles.rulesContentText}>
+                  {'Staðsetning: '}
+                  {location}
+                </Text>
+                <Text style={styles.rulesContentText}>
+                  {'Körfur: '}
+                  {courseLength}
+                </Text>
+              </View>
+              <Button
+                text="SPILA"
+                color="#FFFFFF"
+                backgroundColor="green"
+                handleOnPress={this.startGame}
+              />
             </View>
           </Collapsible>
         </ScrollView>

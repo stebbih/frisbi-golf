@@ -1,4 +1,4 @@
-const tintColor = 'green';
+const tintColor = '#399131';
 
 export default {
   tintColor,
@@ -8,7 +8,7 @@ export default {
   color: tintColor,
   tabBar: '#fefefe',
   errorBackground: 'red',
-  errorText: '#fff',
+  errorText: '#fc3f3f',
   warningBackground: '#EAEB5E',
   warningColor: '#fc3f3f',
   noticeBackground: tintColor,

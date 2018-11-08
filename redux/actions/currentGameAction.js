@@ -25,7 +25,7 @@ export const startNewGame = (courseLength, playerNames) => {
   };
 };
 
-// TODO:
+// Updates a score in the current game.
 export const updateScore = (basketNumber, playerID, score) => ({
   type: UPDATE_SCORE,
   basketNumber,
