@@ -9,7 +9,7 @@ import Collapsible from 'react-native-collapsible';
 import { FontAwesome } from '@expo/vector-icons';
 import styles from '../Styles';
 
-export default class Rule extends Component {
+export default class CollapsibleComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {

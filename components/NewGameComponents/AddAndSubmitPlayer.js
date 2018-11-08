@@ -24,7 +24,7 @@ class AddAndSubmitPlayer extends React.Component {
   pressedAddUser = (user) => {
     const { userName } = this.state;
 
-    // Only whitespaces checker 
+    // Only whitespaces checker
     if (!userName.replace(/\s/g, '').length) {
       this.setState({ invalidPlayername: true });
       this.setState({ userName: '' });
