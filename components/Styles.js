@@ -104,91 +104,47 @@ export default StyleSheet.create({
   otherButtonsIcon: {
     fontSize: 40,
   },
-  /** Rules and RuleScreen styles */
-  ruleContainer: {
+  /** Collapsible list styles */
+  collapsibleContainer: {
     flex: 1,
     backgroundColor: '#fff',
     paddingTop: Constants.statusBarHeight,
   },
-  ruleTitle: {
+  collapsibleTitle: {
     textAlign: 'center',
     fontSize: 22,
     fontWeight: '300',
     marginBottom: 20,
   },
-  ruleHeader: {
+  collapsibleHeader: {
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
     borderBottomWidth: 2,
     borderBottomColor: '#ccc',
+    paddingLeft: 20,
   },
-  ruleHeaderText: {
+  collapsibleHeaderText: {
     textAlign: 'left',
     fontSize: 20,
     fontWeight: '500',
     paddingLeft: 20,
   },
-  ruleAngleButton: {
+  collapsibleAngleButton: {
     fontSize: 40,
     textAlign: 'right',
     paddingRight: 20,
-    paddingBottom: 20,
   },
-  ruleContent: {
+  collapsibleContent: {
     padding: 20,
     backgroundColor: '#fff',
     borderBottomWidth: 2,
     borderBottomColor: '#ccc',
   },
-  rulesContentText: {
+  collapsibleContnetText: {
     fontSize: 16,
   },
-  rulePageContainer: {
-    backgroundColor: '#fff',
-  },
-  /** Trophy style */
-  trophyStyle: {
-    fontSize: 26,
-  },
-
-  /** CourseScreen Styles */
-  courseContainer: {
-    flex: 1,
-    backgroundColor: '#fff',
-    paddingTop: Constants.statusBarHeight,
-  },
-  courseTitle: {
-    textAlign: 'center',
-    fontSize: 22,
-    fontWeight: '300',
-    marginBottom: 20,
-  },
-  courseHeader: {
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    borderBottomWidth: 2,
-    borderBottomColor: '#ccc',
-    paddingLeft: 20,
-  },
-  courseHeaderText: {
-    textAlign: 'left',
-    fontSize: 20,
-    fontWeight: '500',
-  },
-  courseAngleButton: {
-    fontSize: 40,
-    textAlign: 'right',
-    paddingRight: 20,
-  },
-  courseContent: {
-    padding: 20,
-    backgroundColor: '#fff',
-    borderBottomWidth: 2,
-    borderBottomColor: '#ccc',
-  },
-  courseCollapseTextView: {
+  collapsibleCollapseTextView: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginBottom: 25,
@@ -199,5 +155,9 @@ export default StyleSheet.create({
   },
   aboutUsScreenText: {
     fontSize: 16,
+  },
+  /** Trophy style */
+  trophyStyle: {
+    fontSize: 26,
   },
 });

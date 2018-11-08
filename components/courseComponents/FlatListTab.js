@@ -47,22 +47,22 @@ export default class FlatListTab extends Component {
       courseLength,
     } = this.props;
     return (
-      <View style={styles.courseContainer}>
+      <View style={styles.collapsibleContainer}>
         <ScrollView>
           <TouchableOpacity onPress={this.toggleExpanded}>
-            <View style={styles.courseHeader}>
-              <Text style={styles.courseHeaderText}>{name}</Text>
-              <FontAwesome name={icon} style={styles.courseAngleButton} />
+            <View style={styles.collapsibleHeader}>
+              <Text style={styles.collapsibleHeaderText}>{name}</Text>
+              <FontAwesome name={icon} style={styles.collapsibleAngleButton} />
             </View>
           </TouchableOpacity>
           <Collapsible collapsed={collapsed}>
-            <View style={styles.courseContent}>
-              <View style={styles.courseCollapseTextView}>
-                <Text style={styles.rulesContentText}>
+            <View style={styles.collapsibleContent}>
+              <View style={styles.collapsibleCollapseTextView}>
+                <Text style={styles.collapsibleContentText}>
                   {'Staðsetning: '}
                   {location}
                 </Text>
-                <Text style={styles.rulesContentText}>
+                <Text style={styles.collapsibleContentText}>
                   {'Körfur: '}
                   {courseLength}
                 </Text>

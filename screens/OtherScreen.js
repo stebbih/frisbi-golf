@@ -9,12 +9,15 @@ import Color from '../constants/Colors';
 export default class OtherScreen extends React.Component {
   static navigationOptions = {
     title: 'ANNAÐ',
+    headerLeft: (<View />),
+    headerRigt: (<View />),
     headerStyle: {
       backgroundColor: Color.tintColor,
     },
     headerTintColor: '#fff',
     headerTitleStyle: {
       fontSize: 16,
+      alignSelf: 'center',
     },
   };
 
