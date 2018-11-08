@@ -174,4 +174,15 @@ export default StyleSheet.create({
   trophyStyle: {
     fontSize: 26,
   },
+  /** PlayedGamesTab */
+  playedGamesHeader: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    borderBottomWidth: 2,
+    borderBottomColor: '#ccc',
+    paddingLeft: 20,
+    paddingRight: 20,
+    paddingBottom: 20,
+  },
 });
