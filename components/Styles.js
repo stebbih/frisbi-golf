@@ -27,9 +27,9 @@ export default StyleSheet.create({
   /* *** New Game custom styles *** */
   newGameContainer: {
     flex: 1,
-    justifyContent: 'space-between',
-    padding: 10,
-    margin: 6,
+    // justifyContent: 'space-between',
+    // padding: 10,
+    // margin: 6,
   },
   flatText: {
     fontSize: 20,
@@ -47,7 +47,8 @@ export default StyleSheet.create({
     borderTopColor: 'gray',
   },
   buttonView: {
-    flex: 1,
+    // flex: 1,
+    // alignSelf: 'flex-end',
   },
   invalidText: {
     color: 'red',

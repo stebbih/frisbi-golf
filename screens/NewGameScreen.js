@@ -1,15 +1,18 @@
-/* eslint-disable no-useless-constructor */
 import React from 'react';
 import {
-  Text, View, TextInput, Button, TouchableHighlight, FlatList,
+  View,
+  // Button,
+  KeyboardAvoidingView,
+  FlatList,
 } from 'react-native';
-
 
 import { connect } from 'react-redux';
 import styles from '../components/Styles';
 import RenderItemComponent from '../components/NewGameComponents/RenderItemComponent';
 import AddAndSubmitPlayer from '../components/NewGameComponents/AddAndSubmitPlayer';
 import { addPlayers, deletePlayer } from '../redux/actions/newGameAction';
+import Button from '../components/itemComponents/Button';
+
 
 // Gera array af userum og senda a GameScreen
 
@@ -25,9 +28,9 @@ class NewGameScreen extends React.Component {
     },
   };
 
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   removePlayer = (item) => {
     this.props.deletePlayer(item);
@@ -54,9 +57,14 @@ class NewGameScreen extends React.Component {
             keyExtractor={item => item.id}
           />
         </View>
-        <View style={styles.buttonView}>
-          <Button onPress={({ course }) => navigation.navigate('Game', course)} title="Spila!" color="green" />
-        </View>
+        <KeyboardAvoidingView style={styles.buttonView} behavior="padding" enabled>
+          <Button
+            text="SPILA"
+            color="#FFFFFF"
+            backgroundColor="green"
+            handleOnPress={({ course }) => navigation.navigate('Game', course)}
+          />
+        </KeyboardAvoidingView>
       </View>
     );
   }
