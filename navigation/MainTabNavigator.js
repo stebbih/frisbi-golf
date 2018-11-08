@@ -35,6 +35,7 @@ CoursesStack.navigationOptions = {
 };
 
 const PlayedGamesStack = createStackNavigator({
+  GameResults: ResultsScreen,
   PlayedGames: PlayedGamesScreen,
 });
 
