@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  View, Text, TouchableHighlight,
+  View, Text, TouchableHighlight, Platform,
 } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import styles from '../components/Styles';
@@ -17,6 +17,7 @@ export default class OtherScreen extends React.Component {
     headerTitleStyle: {
       fontSize: 16,
       alignSelf: 'center',
+      paddingLeft: Platform.OS === 'ios' ? '0%' : '25%',
     },
   };
 
@@ -52,7 +53,7 @@ export default class OtherScreen extends React.Component {
         <View style={styles.otherBottomContainer}>
           <TouchableHighlight onPress={() => this.props.navigation.navigate('Help')}>
             <View style={styles.otherButtonRow}>
-              <Text style={styles.otherText}>Notkunar leiðbeiningar</Text>
+              <Text style={styles.otherText}>Notkunarleiðbeiningar</Text>
               <FontAwesome name={icon} style={styles.otherButtonsIcon} />
             </View>
           </TouchableHighlight>

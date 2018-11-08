@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, ScrollView } from 'react-native';
+import { Text, ScrollView, Platform } from 'react-native';
 import Styles from '../components/Styles';
 import Color from '../constants/Colors';
 import JsonText from '../data/AboutUs';
@@ -13,6 +13,7 @@ export default class AboutUsScreen extends Component {
       headerTintColor: '#fff',
       headerTitleStyle: {
         fontSize: 16,
+        paddingLeft: Platform.OS === 'ios' ? '0%' : '22%',
       },
     };
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FlatList, View } from 'react-native';
+import { FlatList, View, Platform } from 'react-native';
 import styles from '../components/Styles';
 import Color from '../constants/Colors';
 import JsonText from '../data/Help';
@@ -14,6 +14,7 @@ export default class AboutUsScreen extends Component {
       headerTintColor: '#fff',
       headerTitleStyle: {
         fontSize: 16,
+        paddingLeft: Platform.OS === 'ios' ? '0%' : '22%',
       },
     };
 

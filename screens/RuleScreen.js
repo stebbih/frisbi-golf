@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {
   View,
   FlatList,
+  Platform,
 } from 'react-native';
 import Rule from '../components/RulesComponents/Rule';
 import Reglur from '../data/Reglur.json';
@@ -16,6 +17,7 @@ export default class RulePage extends Component {
     headerTintColor: '#fff',
     headerTitleStyle: {
       fontSize: 15,
+      paddingLeft: Platform.OS === 'ios' ? '0%' : '22%',
     },
   };
 
