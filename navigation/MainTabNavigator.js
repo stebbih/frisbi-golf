@@ -16,9 +16,8 @@ import Styles from '../components/Styles';
 import Color from '../constants/Colors';
 
 const CoursesStack = createStackNavigator({
-  NewGame: NewGameScreen,
   Courses: CourseScreen,
-  // NewGame: NewGameScreen,
+  NewGame: NewGameScreen,
   Game: GameScreen,
 });
 
