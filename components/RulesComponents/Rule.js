@@ -7,12 +7,11 @@ import {
 } from 'react-native';
 import Collapsible from 'react-native-collapsible';
 import { FontAwesome } from '@expo/vector-icons';
-import styles from './Styles';
+import styles from '../Styles';
 
 export default class Rule extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       collapsed: true,
       icon: 'angle-up',
@@ -39,21 +38,21 @@ export default class Rule extends Component {
   render() {
     const { icon } = this.state;
     return (
-      <View style={styles.ruleContainer}>
-        <ScrollView>
-          <TouchableOpacity onPress={this.toggleExpanded}>
-            <View style={styles.ruleHeader}>
-              <Text style={styles.ruleHeaderText}>{this.state.title}</Text>
-              <FontAwesome name={icon} style={styles.ruleAngleButton} />
+      <TouchableOpacity onPress={this.toggleExpanded}>
+        <View style={styles.collapsibleContainer}>
+          <ScrollView>
+            <View style={styles.collapsibleHeader}>
+              <Text style={styles.collapsibleHeaderText}>{this.state.title}</Text>
+              <FontAwesome name={icon} style={styles.collapsibleAngleButton} />
             </View>
-          </TouchableOpacity>
-          <Collapsible collapsed={this.state.collapsed}>
-            <View style={styles.ruleContent}>
-              <Text style={styles.rulesContentText}>{this.state.text}</Text>
-            </View>
-          </Collapsible>
-        </ScrollView>
-      </View>
+            <Collapsible collapsed={this.state.collapsed}>
+              <View style={styles.collapsibleContent}>
+                <Text style={styles.collapsibleContentText}>{this.state.text}</Text>
+              </View>
+            </Collapsible>
+          </ScrollView>
+        </View>
+      </TouchableOpacity>
     );
   }
 }

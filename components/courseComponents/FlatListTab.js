@@ -47,36 +47,37 @@ export default class FlatListTab extends Component {
       courseLength,
     } = this.props;
     return (
-      <View style={styles.courseContainer}>
-        <ScrollView>
-          <TouchableOpacity onPress={this.toggleExpanded}>
-            <View style={styles.courseHeader}>
-              <Text style={styles.courseHeaderText}>{name}</Text>
-              <FontAwesome name={icon} style={styles.courseAngleButton} />
+      <TouchableOpacity onPress={this.toggleExpanded}>
+        <View style={styles.collapsibleContainer}>
+          <ScrollView>
+            <View style={styles.collapsibleHeader}>
+              <Text style={styles.collapsibleHeaderText}>{name}</Text>
+              <FontAwesome name={icon} style={styles.collapsibleAngleButton} />
             </View>
-          </TouchableOpacity>
-          <Collapsible collapsed={collapsed}>
-            <View style={styles.courseContent}>
-              <View style={styles.courseCollapseTextView}>
-                <Text style={styles.rulesContentText}>
-                  {'Staðsetning: '}
-                  {location}
-                </Text>
-                <Text style={styles.rulesContentText}>
-                  {'Körfur: '}
-                  {courseLength}
-                </Text>
+            <Collapsible collapsed={collapsed}>
+              <View style={styles.collapsibleContent}>
+                <View style={styles.collapsibleCollapseTextView}>
+                  <Text style={styles.collapsibleContentText}>
+                    {'Staðsetning: '}
+                    {location}
+                  </Text>
+                  <Text style={styles.collapsibleContentText}>
+                    {'Körfur: '}
+                    {courseLength}
+                  </Text>
+                </View>
+                <Button
+                  text="SPILA"
+                  color="#FFFFFF"
+                  backgroundColor="green"
+                  handleOnPress={this.startGame}
+                />
               </View>
-              <Button
-                text="SPILA"
-                color="#FFFFFF"
-                backgroundColor="green"
-                handleOnPress={this.startGame}
-              />
-            </View>
-          </Collapsible>
-        </ScrollView>
-      </View>
+            </Collapsible>
+          </ScrollView>
+        </View>
+
+      </TouchableOpacity>
     );
   }
 }

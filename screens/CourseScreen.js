@@ -8,12 +8,14 @@ import Colors from '../constants/Colors';
 class GameScreen extends Component {
   static navigationOptions = {
     title: 'VELLIR',
+    headerLeft: (<View />),
     headerStyle: {
       backgroundColor: Colors.tintColor,
     },
     headerTintColor: '#fff',
     headerTitleStyle: {
       fontSize: 16,
+      alignSelf: 'center',
     },
   };
 
