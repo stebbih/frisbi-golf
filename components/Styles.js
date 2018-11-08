@@ -1,6 +1,7 @@
 import { StyleSheet, Dimensions } from 'react-native';
 import { Constants } from 'expo';
 import Colors from '../constants/Colors';
+import { red } from 'ansi-colors';
 
 export default StyleSheet.create({
   appContainer: {
@@ -31,8 +32,9 @@ export default StyleSheet.create({
     margin: 6,
   },
   flatText: {
-    fontSize: 16,
-    borderTopColor: 'gray',
+    fontSize: 20,
+    borderBottomColor: 'gray',
+    borderBottomWidth: 1,
   },
   playersAddedView: {
     flex: 1,
@@ -40,10 +42,16 @@ export default StyleSheet.create({
   },
   flatListView: {
     flex: 6,
-    marginTop: 25,
+    marginTop: 60,
+    borderTopWidth: 1,
+    borderTopColor: 'gray',
   },
   buttonView: {
     flex: 1,
+  },
+  invalidText: {
+    color: 'red',
+    fontSize: 14,
   },
   /** Game screen custom styles */
   gameScreenBasketContainer: {

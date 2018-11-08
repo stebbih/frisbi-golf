@@ -1,5 +1,10 @@
 import React from 'react';
-import { View, StyleSheet, ScrollView } from 'react-native';
+import {
+  View,
+  StyleSheet,
+  ScrollView,
+  Platform,
+} from 'react-native';
 import GridCreator from '../components/itemComponents/GridCreator';
 import DisplayWinner from '../components/resultComponents/DisplayWinner';
 import Colors from '../constants/Colors';
@@ -26,7 +31,7 @@ export default class GameScreen extends React.Component {
     headerTitleStyle: {
       fontSize: 16,
       alignSelf: 'center',
-      paddingLeft: '25%',
+      paddingLeft: Platform.OS === 'ios' ? '0%' : '25%',
     },
   };
 

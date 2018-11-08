@@ -1,14 +1,10 @@
 import React from 'react';
-import {
-  Text, View, TextInput, Button, TouchableHighlight, FlatList,
-} from 'react-native';
-import { Feather } from '@expo/vector-icons';
+import { View, Button, FlatList } from 'react-native';
 import { connect } from 'react-redux';
 import styles from '../components/Styles';
 import RenderItemComponent from '../components/NewGameComponents/RenderItemComponent';
 import { startNewGame, addPlayers, deletePlayer } from '../redux/actions';
-
-// Gera array af userum og senda a GameScreen
+import AddAndSubmitPlayer from '../components/NewGameComponents/AddAndSubmitPlayer';
 
 class NewGameScreen extends React.Component {
   static navigationOptions = {
@@ -51,18 +47,7 @@ class NewGameScreen extends React.Component {
     const { params } = navigation.state;
     return (
       <View style={styles.newGameContainer}>
-        <View style={styles.playersAddedView}>
-          <Text style={{ fontSize: 25, marginBottom: 15 }}>Skráðu leikmenn</Text>
-          <View style={{ flexDirection: 'row' }}>
-            <TextInput
-              onChangeText={userName => this.setState({ userName })}
-              style={styles.textInputStyle}
-            />
-            <TouchableHighlight onPress={() => this.pressedAddUser(this.state.userName)}>
-              <Feather name="user-plus" color="green" size={40} />
-            </TouchableHighlight>
-          </View>
-        </View>
+        <AddAndSubmitPlayer />
         <View style={styles.flatListView}>
           <FlatList
             data={players}
@@ -73,7 +58,6 @@ class NewGameScreen extends React.Component {
                 removePlayer={() => this.removePlayer(item.id)}
               />
             )}
-            // removeUser
             keyExtractor={item => item.id}
           />
         </View>

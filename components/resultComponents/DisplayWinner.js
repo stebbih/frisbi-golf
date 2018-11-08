@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     height: '20%',
   },
   winnerImageContainer: {
-    paddingLeft: '22%',
+    alignItems: 'center',
   },
   winnerTextContainer: {
     marginTop: 10,
