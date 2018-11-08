@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { ActivityIndicator, View, FlatList } from 'react-native';
+import {
+  ActivityIndicator, View, FlatList, Platform,
+} from 'react-native';
 import { connect } from 'react-redux';
 import { getAllCourses } from '../redux/actions/courseAction';
 import FlatListTab from '../components/courseComponents/FlatListTab';
@@ -17,6 +19,7 @@ class GameScreen extends Component {
     headerTitleStyle: {
       fontSize: 16,
       alignSelf: 'center',
+      paddingLeft: Platform.OS === 'ios' ? '0%' : '25%',
     },
   };
 

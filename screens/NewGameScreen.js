@@ -1,10 +1,21 @@
 import React from 'react';
-import { View, Button, FlatList } from 'react-native';
+
+import {
+  View,
+  // Button,
+  KeyboardAvoidingView,
+  FlatList,
+} from 'react-native';
+
 import { connect } from 'react-redux';
 import styles from '../components/Styles';
 import RenderItemComponent from '../components/NewGameComponents/RenderItemComponent';
 import { startNewGame, addPlayers, deletePlayer } from '../redux/actions';
 import AddAndSubmitPlayer from '../components/NewGameComponents/AddAndSubmitPlayer';
+import Button from '../components/itemComponents/Button';
+
+
+// Gera array af userum og senda a GameScreen
 
 class NewGameScreen extends React.Component {
   static navigationOptions = {
@@ -18,12 +29,9 @@ class NewGameScreen extends React.Component {
     },
   };
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      userName: '',
-    };
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   pressedAddUser = (user) => {
     const { userName } = this.state;
@@ -61,9 +69,14 @@ class NewGameScreen extends React.Component {
             keyExtractor={item => item.id}
           />
         </View>
-        <View style={styles.buttonView}>
-          <Button onPress={() => this.startGame(params, players)} title="Spila!" color="green" />
-        </View>
+        <KeyboardAvoidingView style={styles.buttonView} behavior="padding" enabled>
+          <Button
+            text="SPILA"
+            color="#FFFFFF"
+            backgroundColor="green"
+            handleOnPress={({ course }) => navigation.navigate('Game', course)}
+          />
+        </KeyboardAvoidingView>
       </View>
     );
   }

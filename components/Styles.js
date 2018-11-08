@@ -29,11 +29,13 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
     padding: 10,
     margin: 6,
+    backgroundColor: '#fff',
   },
   flatText: {
     fontSize: 20,
     borderBottomColor: 'gray',
     borderBottomWidth: 1,
+    padding: 10,
   },
   playersAddedView: {
     flex: 1,
@@ -180,5 +182,16 @@ export default StyleSheet.create({
   /** Trophy style */
   trophyStyle: {
     fontSize: 26,
+  },
+  /** PlayedGamesTab */
+  playedGamesHeader: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    borderBottomWidth: 2,
+    borderBottomColor: '#ccc',
+    paddingLeft: 20,
+    paddingRight: 20,
+    paddingBottom: 20,
   },
 });
