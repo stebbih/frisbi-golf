@@ -4,11 +4,14 @@ import { START_NEW_GAME, UPDATE_SCORE } from '../constants/currentGameConstant';
  * Takes in the course length and a vector of player's names
  * and makes a currentGame object and saves to redux store.
  */
-export const startNewGame = (courseLength, playerNames) => {
+export const startNewGame = (courseLength, playerArr) => {
   let ID = 0;
-  const players = playerNames.map((player) => {
+  const playerNames = [];
+  const players = [];
+  playerArr.forEach((player) => {
     ID += 1;
-    return { id: ID, name: player, score: undefined };
+    playerNames.push(player.name);
+    players.push({ id: ID, name: player.name, score: undefined });
   });
 
   const game = [];
@@ -21,6 +24,7 @@ export const startNewGame = (courseLength, playerNames) => {
 
   return {
     type: START_NEW_GAME,
+    players: playerNames,
     game,
   };
 };

@@ -7,7 +7,7 @@ import { Feather } from '@expo/vector-icons';
 import { connect } from 'react-redux';
 import styles from '../components/Styles';
 
-import { addPlayers } from '../redux/actions/newGameAction';
+import { startNewGame, addPlayers } from '../redux/actions';
 
 // Gera array af userum og senda a GameScreen
 
@@ -15,8 +15,6 @@ class NewGameScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // courseLength: 8,
-      // playerArr: [],
       userName: '',
     };
   }
@@ -27,32 +25,40 @@ class NewGameScreen extends React.Component {
     if (userName !== '') {
       this.props.addPlayers(user);
     }
-  }
+  };
 
-  pressedPlay = () => {
-    console.warn('Pressed play!');
-  }
+  startGame = () => {
+    this.props.startNewGame(players);
+    this.props.navigation.navigate('Game');
+  };
 
   render() {
-    const { players, navigation } = this.props;
+    const { players } = this.props;
 
     return (
       <View style={styles.container}>
         <View style={styles.newGameContainer}>
           <Text style={{ fontSize: 20, marginBottom: 15 }}>Skráðu leikmenn</Text>
           <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-            <TextInput onChangeText={userName => this.setState({ userName })} style={styles.textInputStyle} />
+            <TextInput
+              onChangeText={userName => this.setState({ userName })}
+              style={styles.textInputStyle}
+            />
             <TouchableHighlight onPress={() => this.pressedAddUser(this.state.userName)}>
               <Feather name="user-plus" color="green" size={40} />
             </TouchableHighlight>
           </View>
           <FlatList
             data={players}
-            renderItem={({ item }) => (<Text key={item.id} style={styles.flatText}>{item.name}</Text>)}
+            renderItem={({ item }) => (
+              <Text key={item.id} style={styles.flatText}>
+                {item.name}
+              </Text>
+            )}
             // removeUser
             keyExtractor={item => item.id}
           />
-          <Button onPress={() => navigation.navigate('Game')} title="Spila!" color="green" />
+          <Button onPress={this.startGame()} title="Spila!" color="green" />
         </View>
       </View>
     );
@@ -62,7 +68,11 @@ class NewGameScreen extends React.Component {
 function mapStateToProps(state) {
   return {
     players: state.addPlayers,
+    currentGame: state.currentGame,
   };
 }
 
-export default connect(mapStateToProps, { addPlayers })(NewGameScreen);
+export default connect(
+  mapStateToProps,
+  { addPlayers, startNewGame },
+)(NewGameScreen);

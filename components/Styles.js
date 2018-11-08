@@ -30,15 +30,14 @@ export default StyleSheet.create({
     padding: 20,
     margin: 20,
   },
-  flatText: {
-  },
+  flatText: {},
   /** Game screen custom styles */
   gameScreenBasketContainer: {
     flex: 1,
     borderWidth: 1,
     borderColor: '#999',
     backgroundColor: '#fbfbfb',
-    width: Dimensions.get('window').width - 8,
+    width: Dimensions.get('window').width - 12,
     alignItems: 'center',
   },
   gameScreenPlayerContainer: {
@@ -70,7 +69,7 @@ export default StyleSheet.create({
     height: 40,
     width: 50,
     borderBottomWidth: 1,
-    borderBottomColor: '#54913a',
+    borderBottomColor: Colors.tintColor,
     fontSize: 24,
   },
   scoreInputInvalid: {

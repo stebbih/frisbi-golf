@@ -1,10 +1,6 @@
-import { ADD_PLAYERS } from '../constants/newGameConstants'; 
+import { ADD_PLAYERS } from '../constants/newGameConstants';
 
-
-export const addPlayers = (userNames) => {
-  console.log(userNames);
-  return {
-    type: ADD_PLAYERS,
-    name: userNames,
-  };
-};
+export const addPlayers = userNames => ({
+  type: ADD_PLAYERS,
+  name: userNames,
+});
