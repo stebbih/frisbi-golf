@@ -8,7 +8,7 @@ import AddAndSubmitPlayer from '../components/NewGameComponents/AddAndSubmitPlay
 
 class NewGameScreen extends React.Component {
   static navigationOptions = {
-    title: 'NYR LEIKUR',
+    title: 'NÝR LEIKUR',
     headerStyle: {
       backgroundColor: 'green',
     },

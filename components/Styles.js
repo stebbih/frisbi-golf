@@ -1,7 +1,6 @@
 import { StyleSheet, Dimensions } from 'react-native';
 import { Constants } from 'expo';
 import Colors from '../constants/Colors';
-import { red } from 'ansi-colors';
 
 export default StyleSheet.create({
   appContainer: {

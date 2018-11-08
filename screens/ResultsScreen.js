@@ -1,14 +1,10 @@
 import React from 'react';
 import {
-  View,
-  StyleSheet,
-  ScrollView,
-  Platform,
+  View, StyleSheet, ScrollView, Platform,
 } from 'react-native';
 import GridCreator from '../components/itemComponents/GridCreator';
 import DisplayWinner from '../components/resultComponents/DisplayWinner';
 import Colors from '../constants/Colors';
-
 
 const styles = StyleSheet.create({
   resultsContainer: {
@@ -23,7 +19,7 @@ const styles = StyleSheet.create({
 export default class GameScreen extends React.Component {
   static navigationOptions = {
     title: 'ÚRSLIT',
-    headerLeft: (<View />),
+    headerLeft: <View />,
     headerStyle: {
       backgroundColor: Colors.tintColor,
     },
@@ -35,14 +31,13 @@ export default class GameScreen extends React.Component {
     },
   };
 
+  // TODO: setja  <GridCreator /> aftur inn!
   render() {
     return (
       <View style={styles.resultsContainer}>
         <ScrollView>
           <DisplayWinner />
-          <View style={styles.resultsGridContainer}>
-            <GridCreator />
-          </View>
+          <View style={styles.resultsGridContainer} />
         </ScrollView>
       </View>
     );

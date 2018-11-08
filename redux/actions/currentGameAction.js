@@ -27,6 +27,7 @@ export const startNewGame = (course, playerArr) => {
     type: START_NEW_GAME,
     players: playerNames,
     game,
+    course,
   };
 };
 

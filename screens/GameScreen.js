@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
-import { startNewGame, updateScore } from '../redux/actions';
+import { updateScore } from '../redux/actions';
 import styles from '../components/Styles';
 import PersonScoreInput from '../components/GameComponents/PersonScoreInput';
 import GridCreator from '../components/itemComponents/GridCreator';
@@ -47,11 +47,13 @@ class GameScreen extends React.Component {
     </View>
   );
 
-  renderResultsComponent = () => (
+  renderResults = currentGame => (
     <View key="resultsComponent" style={styles.gameScreenBasketContainer}>
       <View style={styles.gameScreenHeaderContainer}>
-        <Text style={styles.gameScreenHeaderText}>NIÐURSTÖÐUR</Text>
-        <GridCreator useCurrentGame gameID={undefined} />
+        <Text style={styles.gameScreenHeaderText}>ÚRSLIT</Text>
+      </View>
+      <View style={{ flex: 1, width: '100%' }}>
+        <GridCreator results={currentGame.results} />
       </View>
     </View>
   );
@@ -60,7 +62,7 @@ class GameScreen extends React.Component {
     return (
       <ScrollView horizontal pagingEnabled style={{ margin: 6 }}>
         {this.props.currentGame.game.map(obj => this.renderBasket(obj))}
-        {this.renderResultsComponent()}
+        {this.renderResults(this.props.currentGame)}
       </ScrollView>
     );
   }
@@ -70,5 +72,5 @@ const mapStateToProps = ({ currentGame }) => ({ currentGame });
 
 export default connect(
   mapStateToProps,
-  { startNewGame, updateScore },
+  { updateScore },
 )(GameScreen);
