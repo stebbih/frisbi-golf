@@ -151,10 +151,11 @@ export default StyleSheet.create({
   },
   /** AboutUsScreen styles */
   aboutUsScreenContainer: {
+    padding: 20,
     backgroundColor: '#fff',
   },
   aboutUsScreenText: {
-    fontSize: 16,
+    fontSize: 20,
   },
   /** Trophy style */
   trophyStyle: {
