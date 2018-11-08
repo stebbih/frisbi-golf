@@ -35,10 +35,6 @@ export default class FlatListTab extends Component {
     }
   };
 
-  startGame = () => {
-
-  }
-
   render() {
     const { collapsed, icon } = this.state;
     const {
@@ -70,7 +66,7 @@ export default class FlatListTab extends Component {
                   text="SPILA"
                   color="#FFFFFF"
                   backgroundColor="green"
-                  handleOnPress={this.startGame}
+                  handleOnPress={this.props.navigation}
                 />
               </View>
             </Collapsible>
