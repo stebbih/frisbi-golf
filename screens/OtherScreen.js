@@ -1,26 +1,11 @@
 import React from 'react';
 import {
-  View, Text, TouchableHighlight, Platform,
+  View, Text, TouchableHighlight,
 } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import styles from '../components/Styles';
-import Color from '../constants/Colors';
 
 export default class OtherScreen extends React.Component {
-  static navigationOptions = {
-    title: 'ANNAÐ',
-    headerLeft: (<View />),
-    headerStyle: {
-      backgroundColor: Color.tintColor,
-    },
-    headerTintColor: '#fff',
-    headerTitleStyle: {
-      fontSize: 16,
-      alignSelf: 'center',
-      paddingLeft: Platform.OS === 'ios' ? '0%' : '25%',
-    },
-  };
-
   constructor(props) {
     super(props);
     this.state = {
