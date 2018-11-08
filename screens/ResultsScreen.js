@@ -2,7 +2,6 @@ import React from 'react';
 import {
   View, StyleSheet, ScrollView, Platform,
 } from 'react-native';
-import GridCreator from '../components/itemComponents/GridCreator';
 import DisplayWinner from '../components/resultComponents/DisplayWinner';
 import Colors from '../constants/Colors';
 

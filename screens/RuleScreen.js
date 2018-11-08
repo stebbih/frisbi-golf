@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import {
-  View,
-  FlatList,
-} from 'react-native';
+import { View, FlatList } from 'react-native';
 import Rule from '../components/CollapsibleComponents/CollapsibleComponent';
 import Reglur from '../data/Reglur.json';
 import styles from '../components/Styles';

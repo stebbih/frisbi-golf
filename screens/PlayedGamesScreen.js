@@ -1,14 +1,8 @@
 import React from 'react';
 import {
-  View,
-  Platform,
-  FlatList,
-  ScrollView,
-  StyleSheet,
-  Text,
+  View, Platform, FlatList, StyleSheet,
 } from 'react-native';
 import { connect } from 'react-redux';
-import ResultsScreen from './ResultsScreen';
 import Colors from '../constants/Colors';
 import PlayedGameTab from '../components/playedComponents/PlayedGameTab';
 
@@ -18,10 +12,10 @@ const styles = StyleSheet.create({
   },
 });
 
-export default class GameScreen extends React.Component {
+class PlayedGameScreen extends React.Component {
   static navigationOptions = {
     title: 'LEIKIR',
-    headerLeft: (<View />),
+    headerLeft: <View />,
     headerStyle: {
       backgroundColor: Colors.tintColor,
     },
@@ -34,31 +28,15 @@ export default class GameScreen extends React.Component {
   };
 
   render() {
-    const games = [
-      {
-        id: '1',
-        field: 'völlur 1',
-        date: '2018-10-10',
-      },
-      {
-        id: '2',
-        field: 'völlur 3',
-        date: '2018-10-10',
-      },
-      {
-        id: '3',
-        field: 'völlur 4',
-        date: '2018-10-10',
-      },
-    ];
+    const games = this.props.gameStorage;
     return (
       <View style={styles.playedContainer}>
         <FlatList
           data={games}
-          keyExtractor={item => item.id}
+          keyExtractor={item => item.key}
           renderItem={({ item }) => (
             <PlayedGameTab
-              fieldName={item.field}
+              fieldName={item.location.name}
               gameDate={item.date}
               handleOnPress={() => this.props.navigation.navigate('GameResults', item)}
             />
@@ -68,3 +46,10 @@ export default class GameScreen extends React.Component {
     );
   }
 }
+
+const mapStateToProps = ({ gameStorage }) => ({ gameStorage });
+
+export default connect(
+  mapStateToProps,
+  null,
+)(PlayedGameScreen);

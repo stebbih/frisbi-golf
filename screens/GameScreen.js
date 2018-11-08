@@ -1,10 +1,14 @@
 import React from 'react';
 import { Text, View, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
-import { updateScore } from '../redux/actions';
+import moment from 'moment';
+
+import { updateScore, saveGame } from '../redux/actions';
 import styles from '../components/Styles';
 import PersonScoreInput from '../components/GameComponents/PersonScoreInput';
+import DisplayWinner from '../components/resultComponents/DisplayWinner';
 import GridCreator from '../components/itemComponents/GridCreator';
+import Button from '../components/itemComponents/Button';
 import Color from '../constants/Colors';
 
 class GameScreen extends React.Component {
@@ -47,19 +51,40 @@ class GameScreen extends React.Component {
     </View>
   );
 
-  renderResults = currentGame => (
-    <View key="resultsComponent" style={styles.gameScreenBasketContainer}>
-      <View style={styles.gameScreenHeaderContainer}>
-        <Text style={styles.gameScreenHeaderText}>ÚRSLIT</Text>
+  displayWinner = winner => <DisplayWinner name={winner} />;
+
+  saveGame(results) {
+    this.props.saveGame(results, moment().format('DD.MM.YYYY'));
+  }
+
+  renderResults = (currentGame) => {
+    const gameFinished = currentGame.results.winner !== undefined;
+    return (
+      <View key="resultsComponent" style={styles.gameScreenBasketContainer}>
+        <View style={styles.gameScreenHeaderContainer}>
+          <Text style={styles.gameScreenHeaderText}>ÚRSLIT</Text>
+        </View>
+        {gameFinished ? this.displayWinner(currentGame.results.winner) : <View />}
+        <View style={{ flex: 1, width: '100%' }}>
+          <GridCreator results={currentGame.results} />
+          <Button
+            text="VISTA LEIK"
+            color="#FFF"
+            backgroundColor={gameFinished ? Color.tintColor : 'gray'}
+            handleOnPress={
+              gameFinished
+                ? () => {
+                  this.saveGame(currentGame.results);
+                }
+                : () => {}
+            }
+          />
+        </View>
       </View>
-      <View style={{ flex: 1, width: '100%' }}>
-        <GridCreator results={currentGame.results} />
-      </View>
-    </View>
-  );
+    );
+  };
 
   render() {
-    console.log(this.props.currentGame);
     return (
       <ScrollView horizontal pagingEnabled style={{ margin: 6 }}>
         {this.props.currentGame.game.map(obj => this.renderBasket(obj))}
@@ -73,5 +98,5 @@ const mapStateToProps = ({ currentGame }) => ({ currentGame });
 
 export default connect(
   mapStateToProps,
-  { updateScore },
+  { updateScore, saveGame },
 )(GameScreen);

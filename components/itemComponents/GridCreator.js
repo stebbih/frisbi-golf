@@ -21,7 +21,6 @@ const styles = StyleSheet.create({
 export default class GridCreator extends Component {
   render() {
     const results = this.props.results;
-    console.log(results);
     const tableHead = ['KARFA', ...results.players];
     const tableData = results.table;
     const tableSum = ['SUMMA:', ...results.sums];

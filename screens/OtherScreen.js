@@ -1,7 +1,5 @@
 import React from 'react';
-import {
-  View, Text, TouchableHighlight,
-} from 'react-native';
+import { View, Text, TouchableHighlight } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import styles from '../components/Styles';
 
@@ -12,7 +10,6 @@ export default class OtherScreen extends React.Component {
       icon: 'angle-right',
     };
   }
-
 
   render() {
     const { icon } = this.state;

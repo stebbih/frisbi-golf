@@ -1,9 +1,9 @@
 import React from 'react';
 import { Platform } from 'react-native';
-import { createStackNavigator, createBottomTabNavigator, View } from 'react-navigation';
+import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 import { FontAwesome } from '@expo/vector-icons';
-import TabBarIcon from '../components/TabBarIcon';
 import PlayedGamesScreen from '../screens/PlayedGamesScreen';
+import TabBarIcon from '../components/TabBarIcon';
 import OtherScreen from '../screens/OtherScreen';
 import GameScreen from '../screens/GameScreen';
 import ResultsScreen from '../screens/ResultsScreen';
@@ -125,7 +125,6 @@ RuleScreen.navigationOptions = {
     paddingLeft: Platform.OS === 'ios' ? '0%' : '22%',
   },
 };
-
 
 export default createBottomTabNavigator({
   CoursesStack,

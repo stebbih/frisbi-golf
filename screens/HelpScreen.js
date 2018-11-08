@@ -12,17 +12,17 @@ export default class HelpScreen extends Component {
     };
   }
 
-    _renderItem = ({ item }) => <Help title={item.title} text={item.content} />;
+  _renderItem = ({ item }) => <Help title={item.title} text={item.content} />;
 
-    render() {
-      return (
-        <View style={styles.rulePageContainer}>
-          <FlatList
-            data={this.state.data}
-            keyExtractor={item => item.title}
-            renderItem={this._renderItem}
-          />
-        </View>
-      );
-    }
+  render() {
+    return (
+      <View style={styles.rulePageContainer}>
+        <FlatList
+          data={this.state.data}
+          keyExtractor={item => item.title}
+          renderItem={this._renderItem}
+        />
+      </View>
+    );
+  }
 }

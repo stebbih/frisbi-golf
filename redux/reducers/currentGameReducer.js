@@ -14,35 +14,36 @@ function checkForWinner(state) {
     sums.push(0);
   }
 
+  let gameFinished = true;
   // Go through each basket's scores
   state.game.forEach((basket) => {
     // Construct a row
     const tableRow = [basket.basketNum];
     basket.players.forEach((player) => {
       tableRow.push(player.score);
-      sums[player.id - 1] += parseInt(player.score, 10);
+      if (player.score !== undefined) {
+        sums[player.id - 1] += parseInt(player.score, 10);
+      } else {
+        gameFinished = false;
+      }
     });
     table.push(tableRow);
   });
 
-  let GameFinished = true;
-  let winnerIndex = 1;
-  if (state.players.length > 0) {
+  // Find winner if game is finished
+  let winner;
+  console.log(`Reducer: ${gameFinished}`);
+  if (gameFinished) {
+    let winnerIndex = 0;
     for (let i = 0; i < state.players.length; i += 1) {
-      if (Number.isNaN(sums[i])) {
-        GameFinished = false;
-        break;
-      }
       if (sums[i] < sums[winnerIndex]) {
         winnerIndex = i;
       }
     }
-  }
-
-  let winner;
-  if (GameFinished) {
     winner = state.players[winnerIndex];
   }
+  console.log(`Winner: ${winner}`);
+
   return {
     players: state.players,
     location: state.course,
