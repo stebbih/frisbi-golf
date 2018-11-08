@@ -6,12 +6,24 @@ import {
 import { Feather } from '@expo/vector-icons';
 import { connect } from 'react-redux';
 import styles from '../components/Styles';
+import RenderItemComponent from '../components/NewGameComponents/RenderItemComponent';
 
-import { startNewGame, addPlayers } from '../redux/actions';
+import { startNewGame, addPlayers, deletePlayer } from '../redux/actions';
 
 // Gera array af userum og senda a GameScreen
 
 class NewGameScreen extends React.Component {
+  static navigationOptions = {
+    title: 'NYR LEIKUR',
+    headerStyle: {
+      backgroundColor: 'green',
+    },
+    headerTintColor: '#fff',
+    headerTitleStyle: {
+      fontSize: 16,
+    },
+  };
+
   constructor(props) {
     super(props);
     this.state = {
@@ -32,14 +44,18 @@ class NewGameScreen extends React.Component {
     this.props.navigation.navigate('Game');
   };
 
-  render() {
-    const { players } = this.props;
+  removePlayer = (item) => {
+    this.props.deletePlayer(item);
+  };
 
+  render() {
+    const { players, navigation } = this.props;
+    const { params } = navigation.state;
     return (
-      <View style={styles.container}>
-        <View style={styles.newGameContainer}>
-          <Text style={{ fontSize: 20, marginBottom: 15 }}>Skráðu leikmenn</Text>
-          <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+      <View style={styles.newGameContainer}>
+        <View style={styles.playersAddedView}>
+          <Text style={{ fontSize: 25, marginBottom: 15 }}>Skráðu leikmenn</Text>
+          <View style={{ flexDirection: 'row' }}>
             <TextInput
               onChangeText={userName => this.setState({ userName })}
               style={styles.textInputStyle}
@@ -48,16 +64,22 @@ class NewGameScreen extends React.Component {
               <Feather name="user-plus" color="green" size={40} />
             </TouchableHighlight>
           </View>
+        </View>
+        <View style={styles.flatListView}>
           <FlatList
             data={players}
             renderItem={({ item }) => (
-              <Text key={item.id} style={styles.flatText}>
-                {item.name}
-              </Text>
+              <RenderItemComponent
+                renderPlayers={item.name}
+                isId={item.id}
+                removePlayer={() => this.removePlayer(item.id)}
+              />
             )}
             // removeUser
             keyExtractor={item => item.id}
           />
+        </View>
+        <View style={styles.buttonView}>
           <Button onPress={this.startGame()} title="Spila!" color="green" />
         </View>
       </View>
@@ -74,5 +96,5 @@ function mapStateToProps(state) {
 
 export default connect(
   mapStateToProps,
-  { addPlayers, startNewGame },
+  { addPlayers, startNewGame, deletePlayer },
 )(NewGameScreen);

@@ -44,6 +44,7 @@ class GameScreen extends Component {
               name={item.name}
               location={item.location}
               courseLength={item.courseLength}
+              navigation={() => this.props.navigation.navigate('NewGame', item)}
             />
           )}
         />

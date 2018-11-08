@@ -19,7 +19,6 @@ export default class RulePage extends Component {
 
   constructor(props) {
     super(props);
-
     this.state = {
       rules: Reglur,
     };
