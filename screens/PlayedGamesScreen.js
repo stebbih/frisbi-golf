@@ -1,7 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
 import ResultsScreen from './ResultsScreen';
-import Colors from '../constants/Colors';
 
 export default class GameScreen extends React.Component {
   static navigationOptions = {
