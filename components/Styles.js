@@ -1,6 +1,7 @@
 import { StyleSheet, Dimensions } from 'react-native';
 import { Constants } from 'expo';
 import Colors from '../constants/Colors';
+import { red } from 'ansi-colors';
 
 export default StyleSheet.create({
   appContainer: {
@@ -29,10 +30,13 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
     padding: 10,
     margin: 6,
+    backgroundColor: '#fff',
   },
   flatText: {
-    fontSize: 16,
-    borderTopColor: 'gray',
+    fontSize: 20,
+    borderBottomColor: 'gray',
+    borderBottomWidth: 1,
+    padding: 10,
   },
   playersAddedView: {
     flex: 1,
@@ -40,10 +44,16 @@ export default StyleSheet.create({
   },
   flatListView: {
     flex: 6,
-    marginTop: 25,
+    marginTop: 60,
+    borderTopWidth: 1,
+    borderTopColor: 'gray',
   },
   buttonView: {
     flex: 1,
+  },
+  invalidText: {
+    color: 'red',
+    fontSize: 14,
   },
   /** Game screen custom styles */
   gameScreenBasketContainer: {
@@ -51,7 +61,7 @@ export default StyleSheet.create({
     borderWidth: 1,
     borderColor: '#999',
     backgroundColor: '#fbfbfb',
-    width: Dimensions.get('window').width - 8,
+    width: Dimensions.get('window').width - 12,
     alignItems: 'center',
   },
   gameScreenPlayerContainer: {
@@ -83,7 +93,7 @@ export default StyleSheet.create({
     height: 40,
     width: 50,
     borderBottomWidth: 1,
-    borderBottomColor: '#54913a',
+    borderBottomColor: Colors.tintColor,
     fontSize: 24,
   },
   scoreInputInvalid: {

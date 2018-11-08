@@ -4,22 +4,8 @@ import {
 } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import styles from '../components/Styles';
-import Color from '../constants/Colors';
 
 export default class OtherScreen extends React.Component {
-  static navigationOptions = {
-    title: 'ANNAÐ',
-    headerLeft: (<View />),
-    headerStyle: {
-      backgroundColor: Color.tintColor,
-    },
-    headerTintColor: '#fff',
-    headerTitleStyle: {
-      fontSize: 16,
-      alignSelf: 'center',
-    },
-  };
-
   constructor(props) {
     super(props);
     this.state = {
@@ -52,7 +38,7 @@ export default class OtherScreen extends React.Component {
         <View style={styles.otherBottomContainer}>
           <TouchableHighlight onPress={() => this.props.navigation.navigate('Help')}>
             <View style={styles.otherButtonRow}>
-              <Text style={styles.otherText}>Notkunar leiðbeiningar</Text>
+              <Text style={styles.otherText}>Notkunarleiðbeiningar</Text>
               <FontAwesome name={icon} style={styles.otherButtonsIcon} />
             </View>
           </TouchableHighlight>
