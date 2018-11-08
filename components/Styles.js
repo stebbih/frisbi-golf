@@ -108,7 +108,7 @@ export default StyleSheet.create({
   collapsibleContainer: {
     flex: 1,
     backgroundColor: '#fff',
-    paddingTop: Constants.statusBarHeight,
+    paddingTop: 20,
   },
   collapsibleTitle: {
     textAlign: 'center',
