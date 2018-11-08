@@ -24,10 +24,6 @@ class GameScreen extends React.Component {
     this.state = {};
   }
 
-  componentDidMount() {
-    this.props.startNewGame(2, [{ name: 'Anna' }, { name: 'Birna' }]);
-  }
-
   renderPlayer = (basketNum, player) => (
     <PersonScoreInput
       key={player.id}

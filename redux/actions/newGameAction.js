@@ -7,8 +7,8 @@ export const addPlayers = userNames => ({
   id: (id++).toString(),
 });
 
-export const deletePlayer = id => ({
+export const deletePlayer = ID => ({
   type: DELETE_PLAYER,
   // name: userName,
-  id: id.toString(),
+  id: ID.toString(),
 });

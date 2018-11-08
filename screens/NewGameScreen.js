@@ -2,12 +2,10 @@ import React from 'react';
 import {
   Text, View, TextInput, Button, TouchableHighlight, FlatList,
 } from 'react-native';
-
 import { Feather } from '@expo/vector-icons';
 import { connect } from 'react-redux';
 import styles from '../components/Styles';
 import RenderItemComponent from '../components/NewGameComponents/RenderItemComponent';
-
 import { startNewGame, addPlayers, deletePlayer } from '../redux/actions';
 
 // Gera array af userum og senda a GameScreen
@@ -39,8 +37,8 @@ class NewGameScreen extends React.Component {
     }
   };
 
-  startGame = () => {
-    this.props.startNewGame(players);
+  startGame = (course, players) => {
+    this.props.startNewGame(course, players);
     this.props.navigation.navigate('Game');
   };
 
@@ -80,7 +78,7 @@ class NewGameScreen extends React.Component {
           />
         </View>
         <View style={styles.buttonView}>
-          <Button onPress={this.startGame()} title="Spila!" color="green" />
+          <Button onPress={() => this.startGame(params, players)} title="Spila!" color="green" />
         </View>
       </View>
     );
