@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, ScrollView } from 'react-native';
 import Styles from '../components/Styles';
 import Color from '../constants/Colors';
-
+import JsonText from '../data/AboutUs';
 
 export default class AboutUsScreen extends Component {
     static navigationOptions = {
@@ -16,11 +16,21 @@ export default class AboutUsScreen extends Component {
       },
     };
 
+    constructor(props) {
+      super(props);
+      this.state = {
+        data: JsonText,
+      };
+    }
+
     render() {
       return (
-        <View style={Styles.aboutUsScreenContainer}>
-          <Text style={Styles.aboutUsScreenText}>Eitthvað rosa merkilegt um okkur!! </Text>
-        </View>
+        <ScrollView style={Styles.aboutUsScreenContainer}>
+          <Text style={Styles.aboutUsScreenText}>
+            {this.state.data}
+            {' '}
+          </Text>
+        </ScrollView>
       );
     }
 }
