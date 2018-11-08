@@ -14,7 +14,6 @@ import { startNewGame, addPlayers, deletePlayer } from '../redux/actions';
 import AddAndSubmitPlayer from '../components/NewGameComponents/AddAndSubmitPlayer';
 import Button from '../components/itemComponents/Button';
 
-
 // Gera array af userum og senda a GameScreen
 
 class NewGameScreen extends React.Component {
@@ -74,7 +73,7 @@ class NewGameScreen extends React.Component {
             text="SPILA"
             color="#FFFFFF"
             backgroundColor="green"
-            handleOnPress={({ course }) => navigation.navigate('Game', course)}
+            handleOnPress={() => this.startGame(params, players)}
           />
         </KeyboardAvoidingView>
       </View>
