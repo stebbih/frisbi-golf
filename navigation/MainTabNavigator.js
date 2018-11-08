@@ -1,6 +1,6 @@
 import React from 'react';
 import { Platform } from 'react-native';
-import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
+import { createStackNavigator, createBottomTabNavigator, View } from 'react-navigation';
 import { FontAwesome } from '@expo/vector-icons';
 import TabBarIcon from '../components/TabBarIcon';
 import PlayedGamesScreen from '../screens/PlayedGamesScreen';
@@ -77,6 +77,55 @@ OtherStack.navigationOptions = {
     />
   ),
 };
+
+OtherScreen.navigationOptions = {
+  title: 'ANNAÐ',
+  headerStyle: {
+    backgroundColor: Color.tintColor,
+  },
+  headerTintColor: '#fff',
+  headerTitleStyle: {
+    fontSize: 16,
+    paddingLeft: Platform.OS === 'ios' ? '0%' : '38%',
+  },
+};
+
+HelpScreen.navigationOptions = {
+  title: 'LEIÐBEININGAR',
+  headerStyle: {
+    backgroundColor: Color.tintColor,
+  },
+  headerTintColor: '#fff',
+  headerTitleStyle: {
+    fontSize: 16,
+    paddingLeft: Platform.OS === 'ios' ? '0%' : '16%',
+  },
+};
+
+AboutUsScreen.navigationOptions = {
+  title: 'UM OKKUR',
+  headerStyle: {
+    backgroundColor: Color.tintColor,
+  },
+  headerTintColor: '#fff',
+  headerTitleStyle: {
+    fontSize: 16,
+    paddingLeft: Platform.OS === 'ios' ? '0%' : '22%',
+  },
+};
+
+RuleScreen.navigationOptions = {
+  title: 'REGLUR',
+  headerStyle: {
+    backgroundColor: Color.tintColor,
+  },
+  headerTintColor: '#fff',
+  headerTitleStyle: {
+    fontSize: 15,
+    paddingLeft: Platform.OS === 'ios' ? '0%' : '22%',
+  },
+};
+
 
 export default createBottomTabNavigator({
   CoursesStack,
