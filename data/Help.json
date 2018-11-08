@@ -1,0 +1,14 @@
+[
+    {
+        "title": "Byrja nýjan leik",
+        "content": "Til að byrja nýjan leik þarf að byrja á að velja Vellir leitar möguleikan, sem er neðst í vinstar horninu.\n\nÞar er hægt að skoða hvaða vellir eru í boði, sjá staðsetningu þeirra og fjöldi karfa á vellinum.\n\nÞegar völlur hefur verið fundinn er valið spila."
+    },
+    {
+        "title": "Spila leik",
+        "content": "Þegar völlur hefur verið valinn þá birtist skjár þar sem notandi getur sett inn leikmenn.\n\nNotandi skráir nöfn á þeim sem eru að spila, með því að ýta á persónu myndina með plúsinum bætist leikmaður í lista fyrir neðan.\n\nÞegar allir leikmenn sem eru að taka þátt hafa verið skráðir þá velur notandi SPILA! takkann fyrir neðan og þá geta leikmenn byrjað leik og notandi skráð kastfjölda. "
+    },
+    {
+        "title": "Skoða niðurstöður",
+        "content": "Þegar leik er lokið þá birtast niðurstöður leiksins í töflu, en ef notandi vill skoða fyrri leiki getur hann valið Leikir takkann, sem er neðst fyrir miðju, þar er hægt að skoða niðurstöður leikja."
+    }
+]

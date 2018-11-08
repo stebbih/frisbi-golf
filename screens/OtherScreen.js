@@ -49,6 +49,14 @@ export default class OtherScreen extends React.Component {
             </View>
           </TouchableHighlight>
         </View>
+        <View style={styles.otherBottomContainer}>
+          <TouchableHighlight onPress={() => this.props.navigation.navigate('Help')}>
+            <View style={styles.otherButtonRow}>
+              <Text style={styles.otherText}>Notkunar leiðbeiningar</Text>
+              <FontAwesome name={icon} style={styles.otherButtonsIcon} />
+            </View>
+          </TouchableHighlight>
+        </View>
       </View>
     );
   }

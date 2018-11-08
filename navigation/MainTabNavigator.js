@@ -11,10 +11,12 @@ import NewGameScreen from '../screens/NewGameScreen';
 import CourseScreen from '../screens/CourseScreen';
 import RuleScreen from '../screens/RuleScreen';
 import AboutUsScreen from '../screens/AboutUsScreen';
+import HelpScreen from '../screens/HelpScreen';
 import Styles from '../components/Styles';
 import Color from '../constants/Colors';
 
 const CoursesStack = createStackNavigator({
+  // NewGame: NewGameScreen,
   Courses: CourseScreen,
   NewGame: NewGameScreen,
   Game: GameScreen,
@@ -57,6 +59,7 @@ const OtherStack = createStackNavigator({
   Other: OtherScreen,
   Rules: RuleScreen,
   AboutUs: AboutUsScreen,
+  Help: HelpScreen,
 });
 
 OtherStack.navigationOptions = {

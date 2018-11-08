@@ -21,7 +21,6 @@ export default class RulePage extends Component {
 
   constructor(props) {
     super(props);
-
     this.state = {
       rules: Reglur,
     };
@@ -39,7 +38,6 @@ export default class RulePage extends Component {
             keyExtractor={item => item.title}
             renderItem={this._renderItem}
           />
-
         </View>
       );
     }

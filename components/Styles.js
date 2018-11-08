@@ -14,23 +14,36 @@ export default StyleSheet.create({
     justifyContent: 'center',
   },
   textInputStyle: {
-    height: 40,
-    minWidth: 170,
+    height: 50,
+    minWidth: 210,
     borderColor: 'gray',
     borderWidth: 1,
     flexDirection: 'row',
-    fontSize: 15,
+    fontSize: 18,
     backgroundColor: '#fff',
     marginRight: 10,
   },
   /* *** New Game custom styles *** */
   newGameContainer: {
-    backgroundColor: '#c2ef99',
-    justifyContent: 'space-around',
-    padding: 20,
-    margin: 20,
+    flex: 1,
+    justifyContent: 'space-between',
+    padding: 10,
+    margin: 6,
   },
   flatText: {
+    fontSize: 16,
+    borderTopColor: 'gray',
+  },
+  playersAddedView: {
+    flex: 1,
+    justifyContent: 'space-between',
+  },
+  flatListView: {
+    flex: 6,
+    marginTop: 25,
+  },
+  buttonView: {
+    flex: 1,
   },
   /** Game screen custom styles */
   gameScreenBasketContainer: {
@@ -108,7 +121,7 @@ export default StyleSheet.create({
   collapsibleContainer: {
     flex: 1,
     backgroundColor: '#fff',
-    paddingTop: Constants.statusBarHeight,
+    paddingTop: 20,
   },
   collapsibleTitle: {
     textAlign: 'center',
