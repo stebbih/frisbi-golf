@@ -19,6 +19,17 @@ export default StyleSheet.create({
     borderColor: 'lightgray',
     borderWidth: 1,
     borderRadius: 15,
+    paddingRight: 10,
+    margin: 6,
+    fontSize: 18,
+    backgroundColor: '#fff',
+  },
+  textInputInvalidStyle: {
+    flex: 1,
+    height: 40,
+    borderColor: Colors.warningColor,
+    borderWidth: 1,
+    borderRadius: 15,
     margin: 6,
     fontSize: 18,
     backgroundColor: '#fff',
@@ -41,11 +52,13 @@ export default StyleSheet.create({
     borderBottomWidth: 1,
     padding: 10,
   },
-  playersAddedView: {
-    flex: 1,
-    width: '100%',
-    borderWidth: 1,
-    borderColor: '#fab',
+  addPlayerInputContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  addPlayerButtonContainer: {
+    alignSelf: 'flex-end',
+    margin: 6,
   },
   flatListView: {
     flex: 6,
@@ -59,6 +72,27 @@ export default StyleSheet.create({
   invalidText: {
     color: 'red',
     fontSize: 14,
+  },
+  newGameListPlayerContainer: {
+    flex: 1,
+    padding: 6,
+    margin: 4,
+    borderWidth: 1,
+    borderColor: '#D9d9d9',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  delButton: {
+    flex: 1,
+    margin: 4,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: Colors.warningColor,
+    borderRadius: 4,
+  },
+  delButtonText: {
+    color: '#fff',
   },
   /** Game screen custom styles */
   gameScreenBasketContainer: {
@@ -169,7 +203,7 @@ export default StyleSheet.create({
     borderBottomWidth: 2,
     borderBottomColor: '#ccc',
   },
-  collapsibleContnetText: {
+  collapsibleContentText: {
     fontSize: 16,
   },
   collapsibleCollapseTextView: {

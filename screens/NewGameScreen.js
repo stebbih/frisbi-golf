@@ -8,12 +8,13 @@ import RenderItemComponent from '../components/NewGameComponents/RenderItemCompo
 import { startNewGame, addPlayers, deletePlayer } from '../redux/actions';
 import AddAndSubmitPlayer from '../components/NewGameComponents/AddAndSubmitPlayer';
 import Button from '../components/itemComponents/Button';
+import Colors from '../constants/Colors';
 
 class NewGameScreen extends React.Component {
   static navigationOptions = {
     title: 'NÝR LEIKUR',
     headerStyle: {
-      backgroundColor: 'green',
+      backgroundColor: Colors.tintColor,
     },
     headerTintColor: '#fff',
     headerTitleStyle: {
@@ -59,7 +60,7 @@ class NewGameScreen extends React.Component {
             <Button
               text="SPILA"
               color="#FFFFFF"
-              backgroundColor="green"
+              backgroundColor={Colors.tintColor}
               handleOnPress={() => this.startGame(params, players)}
             />
           </View>

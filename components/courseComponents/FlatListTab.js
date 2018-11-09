@@ -7,6 +7,7 @@ import { FontAwesome } from '@expo/vector-icons';
 import PropTypes from 'prop-types';
 import styles from '../Styles';
 import Button from '../itemComponents/Button';
+import Colors from '../../constants/Colors';
 
 export default class FlatListTab extends Component {
   constructor(props) {
@@ -58,7 +59,7 @@ export default class FlatListTab extends Component {
                 <Button
                   text="SPILA"
                   color="#FFFFFF"
-                  backgroundColor="green"
+                  backgroundColor={Colors.tintColor}
                   handleOnPress={this.props.navigation}
                 />
               </View>

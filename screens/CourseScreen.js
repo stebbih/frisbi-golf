@@ -3,7 +3,7 @@ import {
   ActivityIndicator, View, FlatList, Platform,
 } from 'react-native';
 import { connect } from 'react-redux';
-import { getAllCourses } from '../redux/actions/courseAction';
+import { getAllCourses, clearPlayers } from '../redux/actions';
 import FlatListTab from '../components/courseComponents/FlatListTab';
 import Colors from '../constants/Colors';
 import styles from '../components/Styles';
@@ -27,6 +27,11 @@ class GameScreen extends Component {
     this.props.getAllCourses();
   }
 
+  navigateToNewGame(item) {
+    this.props.clearPlayers();
+    this.props.navigation.navigate('NewGame', item);
+  }
+
   render() {
     const { courses } = this.props;
     if (courses.length === 0) {
@@ -47,7 +52,7 @@ class GameScreen extends Component {
               name={item.name}
               location={item.location}
               courseLength={item.courseLength}
-              navigation={() => this.props.navigation.navigate('NewGame', item)}
+              navigation={() => this.navigateToNewGame(item)}
             />
           )}
         />
@@ -60,5 +65,5 @@ const mapStateToProps = ({ courses }) => ({ courses });
 
 export default connect(
   mapStateToProps,
-  { getAllCourses },
+  { getAllCourses, clearPlayers },
 )(GameScreen);

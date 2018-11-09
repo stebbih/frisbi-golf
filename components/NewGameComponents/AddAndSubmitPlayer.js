@@ -6,54 +6,47 @@ import { Feather } from '@expo/vector-icons';
 import styles from '../Styles';
 
 import { addPlayers } from '../../redux/actions/newGameAction';
+import Colors from '../../constants/Colors';
 
 class AddAndSubmitPlayer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       userName: '',
-      invalidPlayername: false,
+      inputValid: true,
     };
   }
 
-  pressedAddUser = (user) => {
-    const { userName } = this.state;
+  pressedAddUser = (input) => {
+    const regexWs = /^[\s]*$/;
 
-    // Only whitespaces checker
-    if (!userName.replace(/\s/g, '').length) {
-      this.setState({ invalidPlayername: true });
-      this.setState({ userName: '' });
+    if (regexWs.test(input)) {
+      this.setState({ inputValid: false });
       return;
     }
-    this.setState({ userName: '' });
-    this.setState({ invalidPlayername: false });
-    this.props.addPlayers(user);
+
+    this.props.addPlayers(input);
+    this.setState({ userName: '', inputValid: true });
   };
 
   render() {
     return (
-      <View
-        style={{
-          flexDirection: 'row',
-          justifyContent: 'space-around',
-          alignItems: 'center',
-        }}
-      >
+      <View style={styles.addPlayerInputContainer}>
         <TextInput
-          onChangeText={val => this.setState({ userName: val })}
+          placeholder=" Bættu við leikmanni"
+          onChangeText={text => this.setState({ userName: text })}
           value={this.state.userName}
-          style={styles.textInputStyle}
+          autoCapitalize="words"
+          style={this.state.inputValid ? styles.textInputStyle : styles.textInputInvalidStyle}
         />
 
         <TouchableHighlight
-          onPress={
-            this.state.userName === '' ? () => {} : () => this.pressedAddUser(this.state.userName)
-          }
-          style={{ alignSelf: 'flex-end', margin: 6 }}
+          onPress={() => this.pressedAddUser(this.state.userName)}
+          style={styles.addPlayerButtonContainer}
         >
           <Feather
             name="user-plus"
-            color={this.state.userName === '' ? 'gray' : 'green'}
+            color={this.state.userName === '' ? 'gray' : Colors.tintColor}
             size={40}
           />
         </TouchableHighlight>

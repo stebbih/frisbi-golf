@@ -1,16 +1,20 @@
-import { ADD_PLAYERS, DELETE_PLAYER } from '../constants/newGameConstants';
+import { ADD_PLAYERS, DELETE_PLAYER, CLEAR_PLAYERS } from '../constants/newGameConstants';
 
-let id = 0;
+let idCounter = 0;
 export const addPlayers = (userNames) => {
-  id += 1;
+  idCounter += 1;
   return {
     type: ADD_PLAYERS,
     name: userNames,
-    id: (id++).toString(),
+    id: idCounter.toString(),
   };
 };
 
 export const deletePlayer = ID => ({
   type: DELETE_PLAYER,
   id: ID.toString(),
+});
+
+export const clearPlayers = () => ({
+  type: CLEAR_PLAYERS,
 });
