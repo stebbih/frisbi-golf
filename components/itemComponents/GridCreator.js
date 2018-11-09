@@ -5,16 +5,15 @@ import { Table, Row, Rows } from 'react-native-table-component';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 16,
-    paddingTop: 30,
-    backgroundColor: '#fff',
+    padding: 8,
+    backgroundColor: '#f2ffed',
   },
   head: {
-    height: 40,
+    margin: 6,
     backgroundColor: '#c4e5b7',
   },
   text: {
-    margin: 2,
+    margin: 6,
   },
 });
 

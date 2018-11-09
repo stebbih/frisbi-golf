@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
-import {
-  Text,
-  TouchableOpacity,
-  StyleSheet,
-} from 'react-native';
+import { Text, TouchableOpacity, StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   wrapper: {
@@ -13,23 +9,17 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
   buttonText: {
-    paddingLeft: '42%',
+    textAlign: 'center',
   },
 });
 
 export default class Button extends Component {
   render() {
     const {
-      text,
-      color,
-      backgroundColor,
-      handleOnPress,
+      text, color, backgroundColor, handleOnPress,
     } = this.props;
     return (
-      <TouchableOpacity
-        style={[{ backgroundColor }, styles.wrapper]}
-        onPress={handleOnPress}
-      >
+      <TouchableOpacity style={[{ backgroundColor }, styles.wrapper]} onPress={handleOnPress}>
         <Text style={[{ color }, styles.buttonText]}>{text}</Text>
       </TouchableOpacity>
     );

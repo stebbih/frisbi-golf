@@ -14,22 +14,26 @@ export default StyleSheet.create({
     justifyContent: 'center',
   },
   textInputStyle: {
-    height: 50,
-    minWidth: 210,
-    borderColor: 'gray',
+    flex: 1,
+    height: 40,
+    borderColor: 'lightgray',
     borderWidth: 1,
-    flexDirection: 'row',
+    borderRadius: 15,
+    margin: 6,
     fontSize: 18,
     backgroundColor: '#fff',
-    marginRight: 10,
   },
   /* *** New Game custom styles *** */
   newGameContainer: {
     flex: 1,
-    justifyContent: 'space-between',
-    padding: 10,
-    margin: 6,
     backgroundColor: '#fff',
+    justifyContent: 'space-between',
+  },
+  newGameBottomPanelContainer: {
+    alignSelf: 'flex-end',
+    width: '100%',
+    borderTopWidth: 1,
+    borderTopColor: 'lightgray',
   },
   flatText: {
     fontSize: 20,
@@ -39,7 +43,9 @@ export default StyleSheet.create({
   },
   playersAddedView: {
     flex: 1,
-    justifyContent: 'space-between',
+    width: '100%',
+    borderWidth: 1,
+    borderColor: '#fab',
   },
   flatListView: {
     flex: 6,

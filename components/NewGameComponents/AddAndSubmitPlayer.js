@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  TextInput,
-  TouchableHighlight,
-} from 'react-native';
+import { View, TextInput, TouchableHighlight } from 'react-native';
 
 import { connect } from 'react-redux';
 import { Feather } from '@expo/vector-icons';
@@ -24,7 +19,7 @@ class AddAndSubmitPlayer extends React.Component {
   pressedAddUser = (user) => {
     const { userName } = this.state;
 
-    // Only whitespaces checker 
+    // Only whitespaces checker
     if (!userName.replace(/\s/g, '').length) {
       this.setState({ invalidPlayername: true });
       this.setState({ userName: '' });
@@ -33,26 +28,35 @@ class AddAndSubmitPlayer extends React.Component {
     this.setState({ userName: '' });
     this.setState({ invalidPlayername: false });
     this.props.addPlayers(user);
-  }
+  };
 
   render() {
     return (
-      <View style={styles.playersAddedView}>
-        <Text style={{ fontSize: 25, marginBottom: 5 }}>Skráðu leikmenn</Text>
-        <View>
-          {this.state.invalidPlayername && <Text style={styles.invalidText}>Ógilt nafn, reyndu aftur</Text>}
-        </View>
-        <View style={{ flexDirection: 'row' }}>
-          <TextInput onChangeText={val => this.setState({ userName: val })} value={this.state.userName} style={styles.textInputStyle} />
-          {this.state.userName === ''
-            ? <Feather name="user-plus" color="gray" size={40} />
-            : (
-              <TouchableHighlight onPress={() => this.pressedAddUser(this.state.userName)}>
-                <Feather name="user-plus" color="green" size={40} />
-              </TouchableHighlight>
-            )
+      <View
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'space-around',
+          alignItems: 'center',
+        }}
+      >
+        <TextInput
+          onChangeText={val => this.setState({ userName: val })}
+          value={this.state.userName}
+          style={styles.textInputStyle}
+        />
+
+        <TouchableHighlight
+          onPress={
+            this.state.userName === '' ? () => {} : () => this.pressedAddUser(this.state.userName)
           }
-        </View>
+          style={{ alignSelf: 'flex-end', margin: 6 }}
+        >
+          <Feather
+            name="user-plus"
+            color={this.state.userName === '' ? 'gray' : 'green'}
+            size={40}
+          />
+        </TouchableHighlight>
       </View>
     );
   }
@@ -64,4 +68,7 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, { addPlayers })(AddAndSubmitPlayer);
+export default connect(
+  mapStateToProps,
+  { addPlayers },
+)(AddAndSubmitPlayer);
