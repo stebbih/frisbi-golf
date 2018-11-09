@@ -28,6 +28,7 @@ class GameScreen extends React.Component {
     this.state = {};
   }
 
+  // Renders one player and input for it.
   renderPlayer = (basketNum, player) => (
     <PersonScoreInput
       key={player.id}
@@ -37,6 +38,7 @@ class GameScreen extends React.Component {
     />
   );
 
+  // Renders container for one basket's score in the game.
   renderBasket = obj => (
     <View key={obj.basketNum} style={styles.gameScreenBasketContainer}>
       <View style={styles.gameScreenHeaderContainer}>
@@ -51,23 +53,29 @@ class GameScreen extends React.Component {
     </View>
   );
 
+  // Displays winner
   displayWinner = winner => <DisplayWinner name={winner} />;
 
+  // Saves game
   saveGame(results) {
     this.props.saveGame(results, moment().format('DD.MM.YYYY'));
     this.props.navigation.pop(2);
   }
 
-  renderResults = (currentGame) => {
-    const gameFinished = currentGame.results.winner !== undefined;
+  renderResults = (results) => {
+    const gameFinished = results.winner !== undefined;
     return (
       <View key="resultsComponent" style={styles.gameScreenBasketContainer}>
-        <View style={styles.gameScreenHeaderContainer}>
-          <Text style={styles.gameScreenHeaderText}>ÚRSLIT</Text>
-        </View>
-        {gameFinished ? this.displayWinner(currentGame.results.winner) : <View />}
-        <View style={{ flex: 1, width: '100%' }}>
-          <GridCreator results={currentGame.results} />
+        <ScrollView style={{ flex: 1, width: '100%' }}>
+          <View style={styles.gameScreenHeaderContainer}>
+            <Text style={styles.gameScreenHeaderText}>ÚRSLIT</Text>
+          </View>
+          {gameFinished ? this.displayWinner(results.winner) : <View />}
+          <View style={{ flex: 1, width: '100%' }}>
+            <GridCreator results={results} />
+          </View>
+        </ScrollView>
+        <View styles={{ margin: 10, alignSelf: 'flex-end', width: '100%' }}>
           <Button
             text="VISTA LEIK"
             color="#FFF"
@@ -75,7 +83,7 @@ class GameScreen extends React.Component {
             handleOnPress={
               gameFinished
                 ? () => {
-                  this.saveGame(currentGame.results);
+                  this.saveGame(results);
                 }
                 : () => {}
             }
@@ -89,7 +97,7 @@ class GameScreen extends React.Component {
     return (
       <ScrollView horizontal pagingEnabled style={{ margin: 6 }}>
         {this.props.currentGame.game.map(obj => this.renderBasket(obj))}
-        {this.renderResults(this.props.currentGame)}
+        {this.renderResults(this.props.currentGame.results)}
       </ScrollView>
     );
   }

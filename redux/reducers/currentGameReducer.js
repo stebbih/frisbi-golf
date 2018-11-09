@@ -7,9 +7,10 @@ const initialState = {
   results: undefined,
 };
 
-function checkForWinner(state) {
-  const table = []; // Table holding scores of each player
-  const sums = []; // Sums of each player
+// Calculates result table
+function updateResults(state) {
+  const table = []; // Table holding scores
+  const sums = []; // Total scores
   for (let i = 0; i < state.players.length; i += 1) {
     sums.push(0);
   }
@@ -32,7 +33,6 @@ function checkForWinner(state) {
 
   // Find winner if game is finished
   let winner;
-  console.log(`Reducer: ${gameFinished}`);
   if (gameFinished) {
     let winnerIndex = 0;
     for (let i = 0; i < state.players.length; i += 1) {
@@ -42,7 +42,6 @@ function checkForWinner(state) {
     }
     winner = state.players[winnerIndex];
   }
-  console.log(`Winner: ${winner}`);
 
   return {
     players: state.players,
@@ -53,6 +52,7 @@ function checkForWinner(state) {
   };
 }
 
+// Updates a score for one player, then recalulates result table.
 function updateScore(state, action) {
   const tempState = {
     ...state,
@@ -71,10 +71,11 @@ function updateScore(state, action) {
     }),
   };
 
-  const results = checkForWinner(tempState);
+  const results = updateResults(tempState);
   return { ...tempState, results };
 }
 
+// Starts a new game. Adds the new players and calculates result table.
 function startNewGame(action) {
   const tempState = {
     players: action.players,
@@ -82,7 +83,7 @@ function startNewGame(action) {
     course: action.course,
     results: undefined,
   };
-  const results = checkForWinner(tempState);
+  const results = updateResults(tempState);
   return { ...tempState, results };
 }
 

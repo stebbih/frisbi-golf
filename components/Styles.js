@@ -19,7 +19,7 @@ export default StyleSheet.create({
     borderColor: 'lightgray',
     borderWidth: 1,
     borderRadius: 15,
-    paddingRight: 10,
+    padding: 8,
     margin: 6,
     fontSize: 18,
     backgroundColor: '#fff',
@@ -51,6 +51,12 @@ export default StyleSheet.create({
     borderBottomColor: 'gray',
     borderBottomWidth: 1,
     padding: 10,
+  },
+  noConentFlatlistContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#FFF',
   },
   addPlayerInputContainer: {
     flexDirection: 'row',
@@ -123,6 +129,7 @@ export default StyleSheet.create({
   gameScreenHeaderContainer: {
     paddingTop: 20,
     padding: 10,
+    alignSelf: 'center',
   },
   gameScreenHeaderText: {
     fontSize: 30,
@@ -224,6 +231,9 @@ export default StyleSheet.create({
     fontSize: 26,
   },
   /** PlayedGamesTab */
+  playedContainer: {
+    flex: 1,
+  },
   playedGamesHeader: {
     flex: 1,
     flexDirection: 'row',
@@ -233,5 +243,15 @@ export default StyleSheet.create({
     paddingLeft: 20,
     paddingRight: 20,
     paddingBottom: 20,
+  },
+  playedGamesNoConentContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  noContentText: {
+    fontSize: 30,
+    color: '#CCC',
+    textAlign: 'center',
   },
 });

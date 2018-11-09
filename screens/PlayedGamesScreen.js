@@ -1,17 +1,12 @@
 import React from 'react';
 import {
-  View, Platform, FlatList, StyleSheet, Text,
+  View, Platform, FlatList, Text,
 } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import { connect } from 'react-redux';
 import Colors from '../constants/Colors';
 import PlayedGameTab from '../components/playedComponents/PlayedGameTab';
-
-const styles = StyleSheet.create({
-  playedContainer: {
-    flex: 1,
-  },
-});
+import styles from '../components/Styles';
 
 class PlayedGameScreen extends React.Component {
   static navigationOptions = {
@@ -32,20 +27,15 @@ class PlayedGameScreen extends React.Component {
     const games = this.props.gameStorage;
     if (games.length === 0) {
       return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <View style={styles.playedGamesNoConentContainer}>
           <FontAwesome name="exclamation" style={{ fontSize: 80, color: '#CCC' }} />
-          <Text
-            style={{
-              fontSize: 30,
-              color: '#CCC',
-              textAlign: 'center',
-            }}
-          >
+          <Text style={styles.noContentText}>
             {'Engir leikir. \n Spilaðu leik undir „Vellir“.'}
           </Text>
         </View>
       );
     }
+    // else:
     return (
       <View style={styles.playedContainer}>
         <FlatList

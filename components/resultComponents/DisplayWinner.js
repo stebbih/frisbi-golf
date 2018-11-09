@@ -1,16 +1,12 @@
 import React from 'react';
 import {
-  View,
-  Text,
-  StyleSheet,
-  Image,
+  View, Text, StyleSheet, Image,
 } from 'react-native';
 
 const styles = StyleSheet.create({
   winnerContainer: {
-    marginTop: 20,
-    marginBottom: 60,
-    height: '20%',
+    marginTop: 15,
+    marginBottom: 15,
   },
   winnerImageContainer: {
     alignItems: 'center',
@@ -20,9 +16,9 @@ const styles = StyleSheet.create({
   },
   winnerText: {
     textAlign: 'center',
-    fontSize: 22,
-    fontWeight: '300',
-    textDecorationLine: 'underline',
+    fontSize: 35,
+    fontWeight: 'bold',
+    color: '#DAA520',
   },
 });
 
@@ -35,8 +31,8 @@ const DisplayWinner = (props) => {
       </View>
       <View style={styles.winnerTextContainer}>
         <Text style={styles.winnerText}>
-          {'Meistari: '}
-          { name }
+          {'SIGURVEGARI:  '}
+          {name}
         </Text>
       </View>
     </View>
