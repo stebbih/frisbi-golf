@@ -55,6 +55,7 @@ class GameScreen extends React.Component {
 
   saveGame(results) {
     this.props.saveGame(results, moment().format('DD.MM.YYYY'));
+    this.props.navigation.pop(2);
   }
 
   renderResults = (currentGame) => {

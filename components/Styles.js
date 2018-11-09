@@ -59,7 +59,7 @@ export default StyleSheet.create({
     flex: 1,
     borderWidth: 1,
     borderColor: '#999',
-    backgroundColor: '#fbfbfb',
+    backgroundColor: '#fff',
     width: Dimensions.get('window').width - 12,
     alignItems: 'center',
   },

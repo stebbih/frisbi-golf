@@ -3,6 +3,7 @@ import {
   View, StyleSheet, ScrollView, Platform,
 } from 'react-native';
 import DisplayWinner from '../components/resultComponents/DisplayWinner';
+import GridCreator from '../components/itemComponents/GridCreator';
 import Colors from '../constants/Colors';
 
 const styles = StyleSheet.create({
@@ -30,13 +31,16 @@ export default class GameScreen extends React.Component {
     },
   };
 
-  // TODO: setja  <GridCreator /> aftur inn!
   render() {
+    const results = this.props.navigation.state.params;
+
     return (
       <View style={styles.resultsContainer}>
         <ScrollView>
-          <DisplayWinner />
-          <View style={styles.resultsGridContainer} />
+          <DisplayWinner name={results.winner} />
+          <View style={styles.resultsGridContainer}>
+            <GridCreator results={results} />
+          </View>
         </ScrollView>
       </View>
     );

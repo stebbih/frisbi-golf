@@ -11,10 +11,10 @@ const styles = StyleSheet.create({
   },
   head: {
     height: 40,
-    backgroundColor: '#f1f8ff',
+    backgroundColor: '#c4e5b7',
   },
   text: {
-    margin: 6,
+    margin: 2,
   },
 });
 
