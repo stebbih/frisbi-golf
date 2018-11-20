@@ -5,7 +5,11 @@
     },
     {
         "title": "Spila leik",
-        "content": "Þegar völlur hefur verið valinn þá birtist skjár þar sem notandi getur sett inn leikmenn.\n\nNotandi skráir nöfn á þeim sem eru að spila, með því að ýta á persónu myndina með plúsinum bætist leikmaður í lista fyrir neðan.\n\nÞegar allir leikmenn sem eru að taka þátt hafa verið skráðir þá velur notandi SPILA! takkann fyrir neðan og þá geta leikmenn byrjað leik og notandi skráð kastfjölda. "
+        "content": "Þegar völlur hefur verið valinn þá birtist skjár þar sem notandi getur sett inn leikmenn.\n\nNotandi skráir nöfn á þeim sem eru að spila, með því að ýta á persónu myndina með plúsinum bætist leikmaður í lista fyrir neðan.\n\nÞegar allir leikmenn sem eru að taka þátt hafa verið skráðir þá velur notandi SPILA! takkann og þá geta leikmenn byrjað leik og notandi skráð kastfjölda. "
+    },
+    {
+        "title": "Að spila leik",
+        "content": "Fyllt er út í þar til gerðar eyður fyrir hvern spilara hversu mörg köst hann þurfti til að klára brautina, þegar allir hafa klárað og komið er að næstu braut þá dregur notandi skjáinn til vinstri (eða swipe-ar til hægri), þá birtist næsta braut.\n\nÞegar leikur er búinn birtist yfirlit yfir köst á brautunum, samatekt á stigum og sigurvegari leiksins birtur."
     },
     {
         "title": "Skoða niðurstöður",
