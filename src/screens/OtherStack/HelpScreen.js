@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { FlatList, View } from 'react-native';
-import Styles from '../../constants/Styles';
+import styles from '../../constants/Styles';
 import JsonText from '../../../data/Help';
 import Help from '../../components/CollapsibleComponents/CollapsibleComponent';
 

@@ -152,16 +152,17 @@ export default StyleSheet.create({
     backgroundColor: '#fff',
   },
   otherBottomContainer: {
-    paddingTop: Constants.statusBarHeight,
-    paddingBottom: Constants.statusBarHeight,
+    paddingTop: 15,
+    paddingBottom: 15,
     borderBottomWidth: 2,
     borderBottomColor: '#ccc',
   },
   otherText: {
     fontSize: 24,
     fontWeight: 'bold',
-    justifyContent: 'space-around',
+    justifyContent: 'center',
     paddingLeft: 15,
+    paddingTop: 5,
   },
   otherButtonRow: {
     flexDirection: 'row',
