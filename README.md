@@ -19,33 +19,32 @@ The app has three navigation tabs at the bottom, 'Vellir' shows you a list of co
 
 When you start the game you get a view of one basket at the time, but can swipe right to get to the next one. You can always swipe left to go to the previous basket aswell. When on the last basket, you can swipe right to see the results, you can also view this while playing the game. After you have filled in all the scores you can save the game from the results screen.
 
-![Screenshot](/screenshots/vellir_listi_laugardalur.png?raw=true 'List of available courses')
-
-![Screenshot](/screenshots/nyrleikur.png?raw=true 'Starting a new game')
-
-![Screenshot](/screenshots/nyrleikur_leikmenn.png?raw=true 'Adding players')
-
-![Screenshot](/screenshots/nyrleikur_eydaleikmanni.png?raw=true 'Removing an added player')
-
-![Screenshot](/screenshots/spilaleik_urslit.png?raw=true 'Played game results')
-
-![Screenshot](/screenshots/spilaleik_urslit2.png?raw=true 'Played game results')
+<div style={ flex: 1, align-items: space-around}>
+<img style={ padding: 10, } src="./screenshots/nyrleikur.PNG" alt="alt text" height="300">
+<img style={ padding: 10, } src="./screenshots/nyrleikur_leikmenn.PNG" alt="alt text" height="300">
+<img style={ padding: 10, } src="./screenshots/nyrleikur_eydaleikmanni.PNG" alt="alt text" height="300">
+<img style={ padding: 10, } src="./screenshots/spilaleik_urslit.PNG" alt="alt text" height="300">
+<img style={ padding: 10, } src="./screenshots/spilaleik_urslit2.PNG" alt="alt text" height="300">
+<img style={ padding: 10, } src="./screenshots/nyrleikur.PNG" alt="alt text" height="300">
+</div>
 
 ### Viewing saved games
 
 The bottom tab 'Leikir' shows a list of all saved games, so you can view their results.
 
-![Screenshot](/screenshots/leikir_tomurlisti.png?raw=true 'When no games have been saved')
-
-![Screenshot](/screenshots/leikir.png?raw=true 'Saved games')
-
-![Screenshot](/screenshots/leikir_skodaleik.png?raw=true 'A saved game')
+<div style={ flex: 1, align-items: space-around}>
+<img style={ padding: 10, } src="./screenshots/leikir_tomurlisti.jpg" alt="alt text" height="300">
+<img style={ padding: 10, } src="./screenshots/leikir.PNG" alt="alt text" height="300">
+<img style={ padding: 10, } src="./screenshots/leikir_skodaleik.PNG" alt="alt text" height="300">
+</div>
 
 ### Other
 
 Under the bottom tab 'Annað' other information is stored. There you can read the rules of frisbee golf, about the development of the app, and detailed instructions on using the app.
 
-![Screenshot](/screenshots/annad.png?raw=true 'Overview over the tab Other')
+<div style={ flex: 1, align-items: space-around}>
+<img style={ padding: 10, } src="./screenshots/annad.PNG" alt="alt text" height="300">
+</div>
 
 ## Course database and API
 
