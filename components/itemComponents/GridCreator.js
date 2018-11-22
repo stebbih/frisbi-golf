@@ -5,16 +5,20 @@ import { Table, Row, Rows } from 'react-native-table-component';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 8,
+    marginLeft: 10,
+    marginRight: 10,
     backgroundColor: '#f2ffed',
   },
   head: {
-    margin: 6,
     backgroundColor: '#c4e5b7',
   },
   text: {
     margin: 6,
   },
+  headerText: {
+    margin: 6,
+    fontWeight: 'bold',
+  }
 });
 
 export default class GridCreator extends Component {
@@ -27,7 +31,7 @@ export default class GridCreator extends Component {
     return (
       <View style={styles.container}>
         <Table borderStyle={{ borderWidth: 2, borderColor: 'darkgray' }}>
-          <Row data={tableHead} style={styles.head} textStyle={styles.text} />
+          <Row data={tableHead} style={styles.head} textStyle={styles.headerText} />
           <Rows data={tableData} textStyle={styles.text} />
           <Row data={tableSum} style={styles.head} textStyle={styles.text} />
         </Table>

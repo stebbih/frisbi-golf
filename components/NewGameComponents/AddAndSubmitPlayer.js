@@ -37,6 +37,7 @@ class AddAndSubmitPlayer extends React.Component {
           onChangeText={text => this.setState({ userName: text })}
           value={this.state.userName}
           autoCapitalize="words"
+          underlineColorAndroid="transparent"
           style={this.state.inputValid ? styles.textInputStyle : styles.textInputInvalidStyle}
         />
 

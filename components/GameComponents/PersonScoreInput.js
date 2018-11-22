@@ -39,7 +39,8 @@ class PersonScoreInput extends React.Component {
         <Text style={styles.gameScreenPlayerText}>{this.props.playerName}</Text>
         <TextInput
           style={this.state.validInput ? styles.scoreInputStyle : styles.scoreInputInvalid}
-          keyboardType="number-pad"
+          keyboardType="numeric"
+          underlineColorAndroid="transparent"
           maxLength={2}
           onChangeText={input => this.saveInput(this.props.basketNumber, this.props.playerID, input)
           }
