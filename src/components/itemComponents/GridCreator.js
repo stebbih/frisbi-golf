@@ -13,12 +13,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#c4e5b7',
   },
   text: {
-    margin: 6,
+    margin: 3,
+    textAlign: 'center',
   },
   headerText: {
-    margin: 6,
+    margin: 3,
     fontWeight: 'bold',
-  }
+    textAlign: 'center',
+  },
 });
 
 export default class GridCreator extends Component {
@@ -26,7 +28,7 @@ export default class GridCreator extends Component {
     const results = this.props.results;
     const tableHead = ['KARFA', ...results.players];
     const tableData = results.table;
-    const tableSum = ['SUMMA:', ...results.sums];
+    const tableSum = ['', ...results.sums];
 
     return (
       <View style={styles.container}>
