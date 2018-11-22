@@ -4,9 +4,9 @@ import {
 } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import { connect } from 'react-redux';
-import Colors from '../constants/Colors';
-import PlayedGameTab from '../components/playedComponents/PlayedGameTab';
-import styles from '../components/Styles';
+import Colors from '../../constants/Colors';
+import PlayedGameTab from '../../components/playedComponents/PlayedGameTab';
+import styles from '../../constants/Styles';
 
 class PlayedGameScreen extends React.Component {
   static navigationOptions = {

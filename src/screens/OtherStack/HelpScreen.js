@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { FlatList, View } from 'react-native';
-import styles from '../components/Styles';
-import JsonText from '../data/Help';
-import Help from '../components/CollapsibleComponents/CollapsibleComponent';
+import Styles from '../../constants/Styles';
+import JsonText from '../../../data/Help';
+import Help from '../../components/CollapsibleComponents/CollapsibleComponent';
 
 export default class HelpScreen extends Component {
   constructor(props) {

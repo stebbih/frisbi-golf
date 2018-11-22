@@ -3,10 +3,10 @@ import {
   ActivityIndicator, View, FlatList, Platform,
 } from 'react-native';
 import { connect } from 'react-redux';
-import { getAllCourses, clearPlayers } from '../redux/actions';
-import FlatListTab from '../components/courseComponents/FlatListTab';
-import Colors from '../constants/Colors';
-import styles from '../components/Styles';
+import { getAllCourses, clearPlayers } from '../../redux/actions';
+import FlatListTab from '../../components/courseComponents/FlatListTab';
+import Colors from '../../constants/Colors';
+import styles from '../../constants/Styles';
 
 class GameScreen extends Component {
   static navigationOptions = {

@@ -3,7 +3,7 @@ import { View, TextInput, TouchableHighlight } from 'react-native';
 
 import { connect } from 'react-redux';
 import { Feather } from '@expo/vector-icons';
-import styles from '../Styles';
+import styles from '../../constants/Styles';
 
 import { addPlayers } from '../../redux/actions/newGameAction';
 import Colors from '../../constants/Colors';

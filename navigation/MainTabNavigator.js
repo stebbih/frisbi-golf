@@ -2,18 +2,18 @@ import React from 'react';
 import { Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 import { FontAwesome } from '@expo/vector-icons';
-import PlayedGamesScreen from '../screens/PlayedGamesScreen';
-import TabBarIcon from '../components/TabBarIcon';
-import OtherScreen from '../screens/OtherScreen';
-import GameScreen from '../screens/GameScreen';
-import ResultsScreen from '../screens/ResultsScreen';
-import NewGameScreen from '../screens/NewGameScreen';
-import CourseScreen from '../screens/CourseScreen';
-import RuleScreen from '../screens/RuleScreen';
-import AboutUsScreen from '../screens/AboutUsScreen';
-import HelpScreen from '../screens/HelpScreen';
-import Styles from '../components/Styles';
-import Color from '../constants/Colors';
+import PlayedGamesScreen from '../src/screens/PlayedGamesStack/PlayedGamesScreen';
+import TabBarIcon from '../src/components/TabBarIcon';
+import OtherScreen from '../src/screens/OtherStack/OtherScreen';
+import GameScreen from '../src/screens/CourseStack/GameScreen';
+import ResultsScreen from '../src/screens/PlayedGamesStack/ResultsScreen';
+import NewGameScreen from '../src/screens/CourseStack/NewGameScreen';
+import CourseScreen from '../src/screens/CourseStack/CourseScreen';
+import RuleScreen from '../src/screens/OtherStack/RuleScreen';
+import AboutUsScreen from '../src/screens/OtherStack/AboutUsScreen';
+import HelpScreen from '../src/screens/OtherStack/HelpScreen';
+import Styles from '../src/constants/Styles';
+import Color from '../src/constants/Colors';
 
 const CoursesStack = createStackNavigator({
   Courses: CourseScreen,

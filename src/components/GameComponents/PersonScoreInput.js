@@ -3,7 +3,7 @@ import { Text, View, TextInput } from 'react-native';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { updateScore } from '../../redux/actions';
-import styles from '../Styles';
+import styles from '../../constants/Styles';
 
 class PersonScoreInput extends React.Component {
   constructor(props) {

@@ -3,13 +3,13 @@ import { Text, View, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
 import moment from 'moment';
 
-import { updateScore, saveGame } from '../redux/actions';
-import styles from '../components/Styles';
-import PersonScoreInput from '../components/GameComponents/PersonScoreInput';
-import DisplayWinner from '../components/resultComponents/DisplayWinner';
-import GridCreator from '../components/itemComponents/GridCreator';
-import Button from '../components/itemComponents/Button';
-import Color from '../constants/Colors';
+import { updateScore, saveGame } from '../../redux/actions';
+import styles from '../../constants/Styles';
+import PersonScoreInput from '../../components/GameComponents/PersonScoreInput';
+import DisplayWinner from '../../components/resultComponents/DisplayWinner';
+import GridCreator from '../../components/itemComponents/GridCreator';
+import Button from '../../components/itemComponents/Button';
+import Color from '../../constants/Colors';
 
 class GameScreen extends React.Component {
   static navigationOptions = {

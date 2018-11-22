@@ -2,9 +2,9 @@ import React from 'react';
 import {
   View, StyleSheet, ScrollView, Platform,
 } from 'react-native';
-import DisplayWinner from '../components/resultComponents/DisplayWinner';
-import GridCreator from '../components/itemComponents/GridCreator';
-import Colors from '../constants/Colors';
+import DisplayWinner from '../../components/resultComponents/DisplayWinner';
+import GridCreator from '../../components/itemComponents/GridCreator';
+import Colors from '../../constants/Colors';
 
 const styles = StyleSheet.create({
   resultsContainer: {

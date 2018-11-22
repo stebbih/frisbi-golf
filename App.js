@@ -8,7 +8,7 @@ import { persistStore, persistReducer } from 'redux-persist';
 import { PersistGate } from 'redux-persist/integration/react';
 import storage from 'redux-persist/lib/storage';
 import AppNavigator from './navigation/AppNavigator';
-import reducer from './redux/reducers/reducers';
+import reducer from './src/redux/reducers/reducers';
 
 const persistConfig = {
   key: 'root',

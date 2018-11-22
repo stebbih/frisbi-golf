@@ -27,7 +27,7 @@ const DisplayWinner = (props) => {
   return (
     <View style={styles.winnerContainer}>
       <View style={styles.winnerImageContainer}>
-        <Image source={require('../../images/Trophy.png')} />
+        <Image source={require('../../../data/images/Trophy.png')} />
       </View>
       <View style={styles.winnerTextContainer}>
         <Text style={styles.winnerText}>

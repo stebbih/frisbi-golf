@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 
 import SwipeOut from 'react-native-swipeout';
-import styles from '../Styles';
+import styles from '../../constants/Styles';
 
 export default class RenderItemComponent extends React.Component {
   render() {

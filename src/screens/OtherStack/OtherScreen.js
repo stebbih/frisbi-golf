@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableHighlight } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
-import styles from '../components/Styles';
+import styles from '../../constants/Styles';
 
 export default class OtherScreen extends React.Component {
   constructor(props) {

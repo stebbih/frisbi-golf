@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import {
-  ScrollView,
-  Text,
-  View,
-  TouchableOpacity,
+  ScrollView, Text, View, TouchableOpacity,
 } from 'react-native';
 import Collapsible from 'react-native-collapsible';
 import { FontAwesome } from '@expo/vector-icons';
-import styles from '../Styles';
+import styles from '../../constants/Styles';
 
 export default class CollapsibleComponent extends Component {
   constructor(props) {

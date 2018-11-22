@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Text, ScrollView } from 'react-native';
-import Styles from '../components/Styles';
-import JsonText from '../data/AboutUs';
+import Styles from '../../constants/Styles';
+import JsonText from '../../../data/AboutUs';
 
 export default class AboutUsScreen extends Component {
   constructor(props) {

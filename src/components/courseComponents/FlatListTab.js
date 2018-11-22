@@ -5,7 +5,7 @@ import {
 import Collapsible from 'react-native-collapsible';
 import { FontAwesome } from '@expo/vector-icons';
 import PropTypes from 'prop-types';
-import styles from '../Styles';
+import styles from '../../constants/Styles';
 import Button from '../itemComponents/Button';
 import Colors from '../../constants/Colors';
 

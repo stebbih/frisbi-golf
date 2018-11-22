@@ -6,12 +6,12 @@ import {
 import { FontAwesome } from '@expo/vector-icons';
 
 import { connect } from 'react-redux';
-import styles from '../components/Styles';
-import RenderItemComponent from '../components/NewGameComponents/RenderItemComponent';
-import { startNewGame, addPlayers, deletePlayer } from '../redux/actions';
-import AddAndSubmitPlayer from '../components/NewGameComponents/AddAndSubmitPlayer';
-import Button from '../components/itemComponents/Button';
-import Colors from '../constants/Colors';
+import styles from '../../constants/Styles';
+import RenderItemComponent from '../../components/NewGameComponents/RenderItemComponent';
+import { startNewGame, addPlayers, deletePlayer } from '../../redux/actions';
+import AddAndSubmitPlayer from '../../components/NewGameComponents/AddAndSubmitPlayer';
+import Button from '../../components/itemComponents/Button';
+import Colors from '../../constants/Colors';
 
 class NewGameScreen extends React.Component {
   static navigationOptions = {
