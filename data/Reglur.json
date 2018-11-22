@@ -1,23 +1,22 @@
 [
-    {
-        "title": "Markmið leiksins",
-        "content": "Markmið leiksins er að ná frisbí diskinum í körfuna í eins fáum köstum og hægt er."
-    },
-    {
-        "title": "Tillitsemi og öryggi",
-        "content": "Til að tryggja öryggið þitt og annara spilara þá má aldrei kasta frisbí diski fyrr en spilari sem er að kasta er fullviss um að enginn er fyrir eða á því svæði sem diskurinn gæti farið á.\n\nAðrir spilarar eiga að hegða sér á þann hátt sem þeir vilja að aðrir hagi sér þegar þeir eru sjálfir að kasta, s.s. hafa hljóð, reyna ekki að trufla eða hafa áhrif á kast eða völl."
-    },
-    {
-        "title": "Röð kasta",
-        "content": "Í fyrstu umferð þá spilar sá fyrstur sem er vann síðast leik, eftir það kastar sá sem á diskinn sem er lengst frá körfunni fyrst.\n Ef um er að ræða fyrsta leik, þar sem enginn fyrrum vinningshafi er, þá verða leikmenn að ákveða það sín á milli, t.d. með því að spila Skæri, Blað, Steinn."
-    },
-    {
-        "title": "Braut lokið",
-        "content": "Braut telst lokinn þegar diskur stoppar í frisbíkörfu þeirra brautar." 
-    },
-    {  
-        "title": "Kast út fyrir völl",
-        "content": "Ef diskurinn fer útaf vellinum hjá einhverjum af leikmönnum, þá má verður leikmaður að kasta frá staðsetningu nálægast þar sem diskurinn fór útaf.\n\nVegir, lækir, vatn og þéttur trjágróður teljast vera út fyrir völl."
-
-    }
+  {
+    "title": "Markmið leiksins",
+    "content": "Markmið leiksins er að ná frisbí diskinum í körfuna í eins fáum köstum og hægt er."
+  },
+  {
+    "title": "Tillitsemi og öryggi",
+    "content": "Til að tryggja öryggið þitt og annara spilara þá má aldrei kasta frisbí diski fyrr en spilari sem er að kasta er fullviss um að enginn er fyrir eða á því svæði sem diskurinn gæti farið á.\n\nAðrir spilarar eiga að hegða sér á þann hátt sem þeir vilja að aðrir hagi sér þegar þeir eru sjálfir að kasta, s.s. hafa hljóð, reyna ekki að trufla eða hafa áhrif á kast eða völl."
+  },
+  {
+    "title": "Röð kasta",
+    "content": "Í fyrstu umferð þá spilar sá fyrstur sem er vann síðast leik, eftir það kastar sá sem á diskinn sem er lengst frá körfunni fyrst.\n Ef um er að ræða fyrsta leik, þar sem enginn fyrrum vinningshafi er, þá verða leikmenn að ákveða það sín á milli, t.d. með því að spila skæri, blað og steinn."
+  },
+  {
+    "title": "Braut lokið",
+    "content": "Braut telst lokið þegar diskur stoppar í frisbíkörfu þeirra brautar."
+  },
+  {
+    "title": "Kast út fyrir völl",
+    "content": "Ef diskurinn fer útaf vellinum hjá einhverjum af leikmönnum, þá  verður leikmaður að kasta frá staðsetningu nálægast þar sem diskurinn fór útaf.\n\nVegir, lækir, vatn og þéttur trjágróður teljast vera út fyrir völl."
+  }
 ]
