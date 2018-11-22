@@ -48,8 +48,6 @@ export default StyleSheet.create({
   },
   flatText: {
     fontSize: 20,
-    borderBottomColor: 'gray',
-    borderBottomWidth: 1,
     padding: 10,
   },
   noConentFlatlistContainer: {
