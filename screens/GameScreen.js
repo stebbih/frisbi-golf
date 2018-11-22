@@ -75,11 +75,17 @@ class GameScreen extends React.Component {
             <GridCreator results={results} />
           </View>
         </ScrollView>
-        <View styles={{ margin: 10, alignSelf: 'flex-end', width: '100%' }}>
+        <View
+          style={{
+            padding: 5,
+            alignSelf: 'flex-end',
+            width: '100%',
+          }}
+        >
           <Button
             text="VISTA LEIK"
             color="#FFF"
-            backgroundColor={gameFinished ? Color.tintColor : 'gray'}
+            backgroundColor={gameFinished ? Color.tintColor : 'lightgray'}
             handleOnPress={
               gameFinished
                 ? () => {
