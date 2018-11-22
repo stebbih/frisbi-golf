@@ -19,7 +19,6 @@ const styles = StyleSheet.create({
 export default class GameScreen extends React.Component {
   static navigationOptions = {
     title: 'ÚRSLIT',
-    headerLeft: <View />,
     headerStyle: {
       backgroundColor: Colors.tintColor,
     },

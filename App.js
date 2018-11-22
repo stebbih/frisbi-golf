@@ -1,15 +1,26 @@
 import React from 'react';
-import { Platform, StatusBar, View } from 'react-native';
+import { Platform, StatusBar } from 'react-native';
 import { AppLoading, Font, Icon } from 'expo';
-
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
+import { persistStore, persistReducer } from 'redux-persist';
+import { PersistGate } from 'redux-persist/integration/react';
+import storage from 'redux-persist/lib/storage';
 import AppNavigator from './navigation/AppNavigator';
 import reducer from './redux/reducers/reducers';
-import styles from './components/Styles';
 
-const store = createStore(reducer, applyMiddleware(thunk));
+const persistConfig = {
+  key: 'root',
+  storage,
+  whitelist: ['gameStorage'],
+};
+
+const persistedReducer = persistReducer(persistConfig, reducer);
+
+const store = createStore(persistedReducer, applyMiddleware(thunk));
+
+const persistor = persistStore(store);
 
 export default class App extends React.Component {
   state = {
@@ -48,10 +59,10 @@ export default class App extends React.Component {
     }
     return (
       <Provider store={store}>
-        <View style={styles.appContainer}>
+        <PersistGate loading={null} persistor={persistor}>
           {Platform.OS === 'ios' && <StatusBar barStyle="light-content" />}
           <AppNavigator />
-        </View>
+        </PersistGate>
       </Provider>
     );
   }
